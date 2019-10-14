@@ -1,0 +1,17 @@
+title: "Downtown Creedo"
+email: ben@thehoyers.com
+description: >-
+  A social enterprise benefit corporation cultivating meaning, impact and
+  community with direct trade coffee shops, co-working space, social enterprise
+  accelerator and city-wide events.
+url: "https://www.downtowncreedo.com"
+
+# Build settings
+markdown: kramdown
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
