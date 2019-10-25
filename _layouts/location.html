@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<section class="hero">
+  {% include navigation.html %}
+  <div data-ix="popup-menu" class="hero-content {{ page.title | downcase | replace: ' ', '-' }}">
+    <div class="shop-hero-wrapper">
+      <img src="https://uploads-ssl.webflow.com/5876968a1b5dad706913a767/5c33552d7569f5228cfea6b6_logo-white.svg" width="200" alt="" class="hero--logo" />
+      <div class="hero--content--cta--sub--small">convening</div>
+    </div>
+    <div class="hero--content--cta--sub--big">{{ page.title | upcase }}</div>
+    <div class="hero--content--cta--sub--small">Since {{ page.year_opened }}</div>
+  </div>
+</section>
+<div class="section">
+  <div class="container">
+    <h4>Address:</h4>
+    <div>{{ page.map.address }}</div>
+    <div data-widget-latlng="{{ page.map.latlong }}" data-widget-tooltip="Downtown Credo {{ page.title }}" data-widget-zoom="15" class="shop--map w-widget w-widget-map"></div>
+    <div>{{ page.details }}</div>
+    <a href="#" target="_blank" data-w-id="c2ddbdc4-6fa7-ec7d-3994-825f9876dcfb" class="text-link">Rent this space ⟶</a>
+    <h4>Hours of operations</h4>
+    <div>
+      {% for entry in open %}
+      <strong>{{ entry.day }}:</strong> {{ entry.hours }}<br />
+      {% endfor %}
+    <h4>Menu</h4><a href="{{ page.menu }}" target="_blank" class="menu-link">{{ page.title }} Coffee Menu ⟶</a>
+    <h4>Contact</h4>
+    <div>{{ page.phone }}</div>
+  </div>
+</div>
+{% include form-rent.html %}
+{% include form-catering.html %}
+{% include form-wholesale.html %}
