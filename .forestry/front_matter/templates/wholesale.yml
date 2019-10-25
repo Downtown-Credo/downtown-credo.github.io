@@ -1,0 +1,41 @@
+---
+label: Wholesale
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: field_group
+  name: meta
+  label: meta
+  fields:
+  - type: textarea
+    name: description
+    label: description
+  - type: file
+    name: image
+    label: image
+- type: field_group
+  name: wholesale
+  label: wholesale
+  fields:
+  - type: field_group_list
+    name: left
+    label: left
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: textarea
+      name: description
+      label: description
+  - type: field_group_list
+    name: right
+    label: right
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: textarea
+      name: description
+      label: description
