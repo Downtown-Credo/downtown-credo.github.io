@@ -4,6 +4,31 @@ meta:
   description: >-
     All of our coffee origins start with a relationship; somebody knows somebody who&#x27;s growing coffee. Once we make a connection, we evaluate the growers&#x27; goals. Those goals need to include positive outcomes for the people and environment they directly affect. Most of our growers pick their own coffee. If they are hiring pickers, they need to be contributing holistically to improving their quality of life.   
   image: "https://uploads-ssl.webflow.com/5876968a1b5dad706913a767/58e7c2f32ad1de079b90d70c_open-graph-homepage.png"
+heading: "At Credo we believe that coffee is a conduit for pursuing meaning, impact, and community. We roast coffee every week so that you can always enjoy our coffee at its peak freshness. Let us provide our specialty grade coffee for your next event, and you’ll see what we mean."
+details:
+  - title: "Batch Brew"
+    description: |
+      We offer freshly brewed coffee in large batches, ready to serve at any event. Our coffee is brewed into large cambros and made available for pickup on the day of.
+
+      1 cambro serves about 60 people.
+
+      _*Supplies and fixings can be added to each order._
+  - title: "Chemex Service"
+    description: |
+      For those that might want a more personalized touch to the coffee experience, we offer a Chemex station.
+
+      This includes one of our baristas at each station preparing each cup of coffee, brewed out of our Chemex.
+
+      1 Chemex brews about 4 cups of coffee.
+
+      _*Supplies and fixings available._
+image:
+  src: "https://uploads-ssl.webflow.com/5876968a1b5dad706913a767/5c33797a32c18742af06ed27_credo-story7.jpeg"
+  srcset:
+    - src: "https://uploads-ssl.webflow.com/5876968a1b5dad706913a767/5c33797a32c18742af06ed27_credo-story7-p-500.jpeg"
+      size: "500w"
+    - src: "https://uploads-ssl.webflow.com/5876968a1b5dad706913a767/5c33797a32c18742af06ed27_credo-story7.jpeg"
+      size: "1200w"
 ---
 
 <section class="hero">
@@ -16,28 +41,26 @@ meta:
 </section>
 <div class="section">
   <div class="container">
-    <div class="credo-text">At Credo we believe that coffee is a conduit for pursuing meaning, impact, and community.
-      We roast coffee every week so that you can always enjoy our coffee at its peak freshness. Let us provide our
-      specialty grade coffee for your next event, and you’ll see what we mean.</div>
+    <div class="credo-text">{{ page.heading }}</div>
     <div class="columns w-row">
       <div class="w-col w-col-6">
-        <h2>Batch Brew</h2>
-        <div>We offer freshly brewed coffee in large batches, ready to serve at any event. Our coffee is brewed into
-          large cambros and made available for pickup on the day of.<br />1 cambro serves about 60
-          people.<br /><em>*Supplies and fixings can be added to each order.</em><br /></div>
-        <h2>Chemex Service</h2>
-        <div>For those that might want a more personalized touch to the coffee experience, we offer a Chemex station.
-          This includes one of our baristas at each station preparing each cup of coffee, brewed out of our
-          Chemex.<br />1 Chemex brews about 4 cups of coffee. <br /><em>*Supplies and fixings available.</em><br />
-        </div>
+        {% for detail in page.details %}
+        <h2>{{ detail.title }}</h2>
+        <div>{{ detail.description | markdownify }}</div>
+        {% endfor %}
       </div>
       <div class="w-col w-col-6">
-        <img src="https://uploads-ssl.webflow.com/5876968a1b5dad706913a767/5c33797a32c18742af06ed27_credo-story7.jpeg"
-          srcset="https://uploads-ssl.webflow.com/5876968a1b5dad706913a767/5c33797a32c18742af06ed27_credo-story7-p-500.jpeg 500w, https://uploads-ssl.webflow.com/5876968a1b5dad706913a767/5c33797a32c18742af06ed27_credo-story7.jpeg 1200w"
+        {% if page.image %}
+        <img src="{{ page.image.src }}"
+          srcset="{%- for set in page.image.srcset -%}{{ set.src }} {{ set.size }}, {%- endfor -%}"
           sizes="(max-width: 479px) 96vw, (max-width: 767px) 92vw, (max-width: 991px) 46vw, 48vw" alt="" class="half-photo" />
         </div>
+        {% endif %}
+      </div>
     </div>
-    <div class="center"><a href="#" class="button w-button popup" data-form="catering-form">Inquire about Catering ⟶</a></div>
+    <div class="center">
+      <a href="#" class="button w-button popup" data-form="catering-form">Inquire about Catering ⟶</a>
+    </div>
   </div>
 </div>
 {% include form-catering.html %}
