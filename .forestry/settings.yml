@@ -7,12 +7,32 @@ sections:
 - type: document
   path: catering.html
   label: Catering
+- type: document
+  path: coffee.html
+  label: Coffee
+  match: "**/*"
+- type: document
+  path: contact.html
+  label: Contact
+  match: "**/*"
+- type: document
+  path: index.html
+  label: Homepage
+  match: "**/*"
+- type: document
+  path: podcast.html
+  label: Podcast
+  match: "**/*"
+- type: document
+  path: story.html
+  label: Story
+  match: "**/*"
+- type: document
+  path: wholesale
+  label: Wholesale
   match: "**/*"
 - type: jekyll-pages
   label: Pages
-  create: all
-- type: jekyll-posts
-  label: Posts
   create: all
 upload_dir: uploads
 public_path: "/uploads"
