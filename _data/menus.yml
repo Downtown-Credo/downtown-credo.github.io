@@ -1,23 +1,23 @@
 ---
 locations:
 - title: College Park
-  url: "/locations/college-park/"
+  url: "/locations/college-park"
   weight: 1
 - title: Health Village
-  url: "/locations/health-village/"
+  url: "/locations/health-village"
   weight: 2
 - title: North Quarter
-  url: "/locations/north-quarter/"
+  url: "/locations/north-quarter"
   weight: 3
 story:
 - title: Our Story
-  url: "/story/"
+  url: "/story"
   weight: 1
 - title: Our Coffee
-  url: "/coffee/"
+  url: "/coffee"
   weight: 2
 - title: Podcast
-  url: "/podcast/"
+  url: "/podcast"
   weight: 3
 shop:
 - title: Coffee &amp; Merch
@@ -56,5 +56,5 @@ navigation:
   identifier: friends
   weight: 4
 - title: Contact
-  url: "/contact/"
+  url: "/contact"
   weight: 5
