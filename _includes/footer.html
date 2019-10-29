@@ -1,44 +1,38 @@
 <div class="footer">
   <div class="container w-clearfix">
+    {% for item in site.data.menus.navigation %}
+    {% if item.identifier %}
     <div class="footer-column-left">
-      <h5 class="footer--heading">Locations</h5><a href="/locations/college-park" class="footerlink">College
-        Park</a><a href="/locations/health-village" class="footerlink">Health Village</a><a
-        href="/locations/north-quarter" class="footerlink">North Quarter</a>
+      <h5 class="footer--heading">{{ item.title }}</h5>
+      {% for child in site.data.menus[item.identifier] %}
+      {% assign is_external = child.url | slice: 0, 4 %}
+      <a href="{{ child.url }}"{% if is_external == "http" %}target="_blank" {% endif %} class="footerlink">{{ child.title }}</a>
+      {% endfor %}
     </div>
-    <div class="footer-column-left">
-      <h5 class="footer--heading">Story</h5><a href="/story" class="footerlink">Our Story</a><a href="/coffee"
-        class="footerlink">Our Coffee</a><a href="/podcast" class="footerlink">Podcast</a>
-    </div>
-    <div class="footer-column-left">
-      <h5 class="footer--heading">Shop</h5><a href="https://squareup.com/store/downtown-credo/" target="_blank"
-        class="footerlink">Coffee &amp; Merch</a><a href="https://squareup.com/store/downtown-credo/" target="_blank"
-        class="footerlink">Gift Cards</a><a href="#" data-w-id="a3dc79c4-0123-6146-4738-a382a37b9c9a"
-        class="footerlink">Catering</a><a href="/wholesale" data-w-id="a42405bd-add9-69e9-ae5c-020caff5711e"
-        class="footerlink">Wholesale</a>
-    </div>
-    <div class="footer-column-left">
-      <h5 class="footer--heading">Friends</h5><a href="http://credoconduit.com" target="_blank"
-        class="footerlink">Conduit</a><a href="http://rallysea.com" target="_blank" class="footerlink">Rally
-        Makers</a><a href="http://orlandotogether.org" target="_blank" class="footerlink">Orlando Together</a>
-    </div>
+    {% endif %}
+    {% endfor %}
     <div class="footer-column-left social">
-      <h5 class="footer--heading">SOCIAL</h5><a href="https://www.facebook.com/downtowncredo" target="_blank"
-        class="footerlink">Facebook</a><a href="https://www.twitter.com/downtowncredo" target="_blank"
-        class="footerlink">Twitter</a><a href="https://instagram.com/downtowncredo" target="_blank"
-        class="footerlink">Instagram</a><a href="https://www.yelp.com/biz/downtown-credo-coffee-orlando"
-        target="_blank" class="footerlink">Yelp</a>
+      <h5 class="footer--heading">SOCIAL</h5>
+      {% for item in site.data.menus.social %}
+      <a href="{{ item.url }}" target="_blank" class="footerlink">{{ item.title }}</a>
+      {% endfor %}
     </div>
     <div class="footerbottom w-clearfix">
-      <div class="footer--copyright">© 2010–2019 Downtown CREDO<br />Site design &amp; development by <a
-          href="http://rusinov.ro" target="_blank" class="link">rusinov.ro</a></div>
-      <div class="facebook w-widget w-widget-facebook"><iframe
+      <div class="footer--copyright">© 2010–2019 Downtown CREDO<br />Site design &amp; development by <a href="http://rusinov.ro" target="_blank" class="link">rusinov.ro</a></div>
+      <div class="facebook w-widget w-widget-facebook">
+        <iframe
           src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fdowntowncredo&amp;layout=standard&amp;locale=en_US&amp;action=like&amp;show_faces=false&amp;share=false"
           scrolling="no" frameborder="0" allowtransparency="true"
-          style="border: none; overflow: hidden; width: 225px; height: 25px;"></iframe></div>
-      <div class="twitter w-widget w-widget-twitter"><iframe
+          style="border: none; overflow: hidden; width: 225px; height: 25px;">
+        </iframe>
+      </div>
+      <div class="twitter w-widget w-widget-twitter">
+        <iframe
           src="//platform.twitter.com/widgets/follow_button.html#screen_name=downtowncredo&amp;show_count=true&amp;size=m&amp;show_screen_name=true&amp;dnt=true"
           scrolling="no" frameborder="0" allowtransparency="true"
-          style="border: none; overflow: hidden; width: 100%; height: 21px;"></iframe></div>
+          style="border: none; overflow: hidden; width: 100%; height: 21px;">
+        </iframe>
+      </div>
     </div>
   </div>
 </div>

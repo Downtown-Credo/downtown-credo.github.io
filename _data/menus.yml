@@ -58,3 +58,16 @@ navigation:
 - title: Contact
   url: "/contact"
   weight: 5
+social:
+- title: Facebook
+  url: "https://www.facebook.com/downtowncredo"
+  weight: 1
+- title: Twitter
+  url: "https://www.twitter.com/downtowncredo"
+  weight: 2
+- title: Instagram
+  url: "https://instagram.com/downtowncredo"
+  weight: 3
+- title: Yelp
+  url: "https://www.yelp.com/biz/downtown-credo-coffee-orlando"
+  weight: 4
