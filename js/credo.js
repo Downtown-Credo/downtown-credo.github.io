@@ -1,6 +1,8 @@
 jQuery('.popup').on('click', function() {
   var form = $(this).data('form');
-  jQuery('*[data-id="' + form + '"]').css('display', 'flex');
+  jQuery('*[data-id="' + form + '"]')
+    .removeAttr('style')
+    .css('display', 'flex');
 });
 
 jQuery('.x').on('click', function() {
