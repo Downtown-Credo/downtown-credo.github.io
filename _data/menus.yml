@@ -2,41 +2,59 @@
 locations:
 - title: College Park
   url: "/locations/college-park/"
+  weight: 1
 - title: Health Village
   url: "/locations/health-village/"
+  weight: 2
 - title: North Quarter
   url: "/locations/north-quarter/"
+  weight: 3
 story:
 - title: Our Story
   url: "/story/"
+  weight: 1
 - title: Our Coffee
   url: "/coffee/"
+  weight: 2
 - title: Podcast
   url: "/podcast/"
+  weight: 3
 shop:
 - title: Coffee &amp; Merch
   url: "https://squareup.com/store/downtown-credo/"
+  weight: 1
 - title: Gift Cards
   url: "https://squareup.com/store/downtown-credo/"
+  weight: 2
 - title: Catering
   url: "/catering"
+  weight: 3
 - title: Wholesale
   url: "/wholesale"
+  weight: 4
 friends:
 - title: Conduit
   url: "http://credoconduit.com"
+  weight: 1
 - title: Rally
   url: "http://rallysea.com"
+  weight: 2
 - title: Orlando Together
   url: "http://orlandotogether.org"
+  weight: 3
 navigation:
 - title: Locations
   identifier: locations
+  weight: 1
 - title: Story
   identifier: story
+  weight: 2
 - title: Shop
   identifier: shop
+  weight: 3
 - title: Friends
   identifier: friends
+  weight: 4
 - title: Contact
   url: "/contact/"
+  weight: 5
