@@ -1,10 +1,14 @@
-jQuery('.popup').on('click', function() {
-  var form = $(this).data('form');
-  jQuery('*[data-id="' + form + '"]')
-    .removeAttr('style')
-    .css('display', 'flex');
-});
+$(function ($) {
+  $('.popup').on('click', function() {
+    var form = $(this).data('form');
+    $('*[data-id="' + form + '"]')
+      .removeAttr('style')
+      .css('display', 'flex');
+  });
 
-jQuery('.x').on('click', function() {
-  jQuery(this).parents('.form-pop').css('display', 'none');
-})
+  $('.x').on('click', function() {
+    $(this).parents('.form-pop').css('display', 'none');
+  })
+
+  $("#datepicker").datepicker({});
+})(jQuery);
