@@ -27,8 +27,6 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
-    jekyll-menus (0.6.0)
-      jekyll (~> 3.1)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-watch (2.2.1)
@@ -66,7 +64,6 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.8.6)
-  jekyll-menus
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.0)

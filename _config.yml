@@ -8,8 +8,6 @@ url: "https://www.downtowncreedo.com"
 
 # Build settings
 markdown: kramdown
-plugins:
-  - jekyll-menus
 
 defaults:
   -
