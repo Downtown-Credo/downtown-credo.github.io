@@ -7,7 +7,6 @@ sections:
 - type: document
   path: _data/podcasts.yml
   label: Podcasts
-  match: "**/*"
 - type: document
   path: catering.html
   label: Catering

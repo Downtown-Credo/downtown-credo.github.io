@@ -1,0 +1,17 @@
+---
+label: Podcasts
+hide_body: true
+fields:
+- type: field_group_list
+  name: podcasts
+  label: podcasts
+  fields:
+  - type: text
+    name: name
+    label: name
+  - type: text
+    name: duration
+    label: duration
+  - type: text
+    name: file
+    label: file
