@@ -5,6 +5,10 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: document
+  path: people.html
+  label: People
+  match: "**/*"
+- type: document
   path: _data/podcasts.yml
   label: Podcasts
 - type: document
