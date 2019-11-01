@@ -12,6 +12,10 @@ fields:
   - type: text
     name: duration
     label: duration
+    config:
+      required: true
   - type: text
     name: file
     label: file
+    config:
+      required: true
