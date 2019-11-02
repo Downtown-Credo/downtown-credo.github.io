@@ -1,0 +1,64 @@
+---
+label: People
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: field_group
+  name: meta
+  label: meta
+  fields:
+  - type: text
+    name: description
+    label: description
+- type: field_group_list
+  name: people
+  label: people
+  fields:
+  - type: text
+    name: name
+    label: name
+  - type: text
+    name: role
+    label: role
+  - type: textarea
+    name: locale
+    label: locale
+  - type: textarea
+    name: bio
+    label: bio
+  - type: field_group
+    name: image
+    label: image
+    fields:
+    - type: file
+      name: src
+      label: src
+    - type: field_group_list
+      name: srcset
+      label: srcset
+      fields:
+      - type: text
+        name: size
+        label: size
+      - type: file
+        name: image
+        label: image
+  - type: field_group
+    name: hover
+    label: hover
+    fields:
+    - type: file
+      name: src
+      label: src
+    - type: field_group_list
+      name: srcset
+      label: srcset
+      fields:
+      - type: text
+        name: size
+        label: size
+      - type: file
+        name: image
+        label: image
