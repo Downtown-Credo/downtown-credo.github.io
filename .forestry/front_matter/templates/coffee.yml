@@ -35,7 +35,7 @@ fields:
   fields:
   - type: field_group_list
     name: first
-    label: first
+    label: First Slider
     fields:
     - type: text
       name: title
@@ -45,7 +45,7 @@ fields:
       label: image
   - type: field_group_list
     name: second
-    label: second
+    label: Second Slider
     fields:
     - type: text
       name: title
