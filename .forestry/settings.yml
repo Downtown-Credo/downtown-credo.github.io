@@ -9,6 +9,8 @@ sections:
   label: Locations
   create: documents
   match: "**/*"
+  templates:
+  - location
 - type: document
   path: index.html
   label: Homepage
