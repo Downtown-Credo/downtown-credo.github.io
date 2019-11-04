@@ -20,9 +20,6 @@ sections:
   path: coffee.html
   label: Coffee
 - type: document
-  path: contact.html
-  label: Contact
-- type: document
   path: story.html
   label: Story
 - type: document
