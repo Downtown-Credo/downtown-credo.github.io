@@ -4,6 +4,26 @@ meta:
   description: >-
     All of our coffee origins start with a relationship; somebody knows somebody who&#x27;s growing coffee. Once we make a connection, we evaluate the growers&#x27; goals. Those goals need to include positive outcomes for the people and environment they directly affect. Most of our growers pick their own coffee. If they are hiring pickers, they need to be contributing holistically to improving their quality of life.
   image: "/img/meta/homepage.png"
+intro: |
+  Downtown CREDO is a social enterprise benefit corporation committed to inspiring the pursuit of meaning, impact and community.
+
+  We are instigated by our CREDO that says…
+credo: "Life is worth living. I refuse to merely exist. I pursue a life of meaning and purpose, fulfillment and joy. The world is not yet as it ought to be. Neither is my city. Neither am I. Yet, I reject apathy and despair. I engage the world, my city, and myself to make an impact for good. I am not alone. I press through narcissism, isolation and self-sufficiency striving to live in authentic community."
+story:
+  - image: "/img/couch.jpg"
+    image_alt: Couch
+    text: |
+      We move toward this CREDO with successive small choices, like a cup of coffee. We&#x27;re convinced that **_buying a cup of coffee is a big deal._** Our coffee is carried down mountains, shipped across oceans and carefully roasted just for you. Each cup of CREDO coffee not only tastes great, but it has a positive impact on the people who touch it. We build relationships with our growers and suppliers to avoid supporting exploitation of people or environment; and we pay growers as directly as possible to get as much money in their hands as we can. Your coffee purchase always supports a system, our system is making an impact for good. That&#x27;s why we have you name your price — with CREDO you don&#x27;t just buy a cup, you decide what role you will play in the supply chain.
+
+      Downtown CREDO began in the spring of 2010. Very quickly the challenging work of network cultivation was organized into three divisions: Coffee, Rally, Conduit. Each of these divisions created opportunities for folks to not only be introduced to a life animated by the CREDO, but to step into the growing web of people who’ve committed to it.
+
+      Trash clean-ups and get-fit weeks, vegetable gardens and coffee origin trips, songwriters stages and poetry readings, float building competitions and parades, social enterprise pitch competitions and permaculture workshops…over the first several years of our existence we created countless opportunities for folks to become friends and move toward lives of meaning impact and community.
+  - image: "/img/credo-college-park-shop.jpg"
+    image_alt: Downtown Credo College Park shop
+    text: |
+      Today Downtown CREDO coffee operates three name-your-price coffee shops and carefully roasts coffee for select wholesale partners. CREDO Conduit has grown into a porous society of companies and individuals committed to the notion that our work gets better when we come alongside people who’re different from us. We convene that society in our very own co-working space. Rally has spun off into its own non-profit in partnership with the Central Florida Foundation and Rollins College with the mission of elevating Orlando into a regional hub for new social enterprises. CREDO’s neighborhood organizing efforts also spun off into its own non-profit called Orlando Together with the mission of fortifying cities and organizations by undermining racial divisions.
+
+      We’re learning that if you pursue a life of meaning impact and community and start with steps so small they seem silly, you may not know where you’ll end up—but it will certainly be good. We’d definitely encourage you to launch your own pursuit of meaning, impact and community (make sure to bring good coffee).
 ---
 
 <section class="hero">
@@ -14,68 +34,25 @@ meta:
     </div>
   </div>
 </section>
+{% assign sizes = "500, 1080, 1200" | split: ", " %}
 <div class="section">
   <div class="container">
-    <div class="story-intro">Downtown CREDO is a social enterprise benefit corporation committed to inspiring the
-      pursuit of meaning, impact and community. <br />We are instigated by our CREDO that says…</div>
-    <div class="credo-text">Life is worth living. I refuse to merely exist. I pursue a life of meaning and purpose,
-      fulfillment and joy. The world is not yet as it ought to be. Neither is my city. Neither am I. Yet, I reject
-      apathy and despair. I engage the world, my city, and myself to make an impact for good. I am not alone. I press
-      through narcissism, isolation and self-sufficiency striving to live in authentic community. </div>
+    <div class="story-intro">{{ page.intro | markdownify }}</div>
+    <div class="credo-text">{{ page.credo | markdownify }}</div>
     <div class="w-row">
-      <div class="w-col w-col-6"><img
-          src="/img/credo-story2.jpg"
-          srcset="/img/credo-story2-p-500.jpg 500w, /img/credo-story2.jpg 1200w"
-          sizes="(max-width: 479px) 96vw, (max-width: 767px) 92vw, (max-width: 991px) 46vw, 48vw"
-          alt=""
-          class="half-photo" />
-        <div>We move toward this CREDO with successive small choices, like a cup of coffee. We&#x27;re convinced that
-          <strong><em>buying a cup of coffee is a big deal.</em></strong> Our coffee is carried down mountains,
-          shipped across oceans and carefully roasted just for you. Each cup of CREDO coffee not only tastes great,
-          but it has a positive impact on the people who touch it. We build relationships with our growers and
-          suppliers to avoid supporting exploitation of people or environment; and we pay growers as directly as
-          possible to get as much money in their hands as we can. Your coffee purchase always supports a system, our
-          system is making an impact for good. That&#x27;s why we have you name your price — with CREDO you don&#x27;t
-          just buy a cup, you decide what role you will play in the supply chain. <br />‍<br />Downtown CREDO began in
-          the spring of 2010. Very quickly the challenging work of network cultivation was organized into three
-          divisions: Coffee, Rally, Conduit. Each of these divisions created opportunities for folks to not only be
-          introduced to a life animated by the CREDO, but to step into the growing web of people who’ve committed to
-          it. <br />‍<br />Trash clean-ups and get-fit weeks, vegetable gardens and coffee origin trips, songwriters
-          stages and poetry readings, float building competitions and parades, social enterprise pitch competitions
-          and permaculture workshops…over the first several years of our existence we created countless opportunities
-          for folks to become friends and move toward lives of meaning impact and community.<br /></div>
+      {% for item in page.story %}
+      <div class="w-col w-col-6">
+      <img
+        src="{{ site.cloudinary }}{{ item.image }}"
+        alt="{{ item.image_alt }}"
+        sizes="(max-width: 479px) 96vw, (max-width: 767px) 92vw, (max-width: 991px) 46vw, 48vw"
+        srcset="{% for size in sizes %}{{ site.cloudinary }}/c_scale,w_{{ size }}{{ item.image }} {{ size }}w, {% endfor %}"
+        class="half-photo" />
+        <div>{{ item.text | markdownify }}</div>
       </div>
-      <div class="w-col w-col-6"><img
-          src="/img/credo-story4.jpg"
-          srcset="/img/credo-story4-p-500.jpg 500w, /img/credo-story4-p-1080.jpg 1080w, /img/credo-story4.jpg 1200w"
-          sizes="(max-width: 479px) 96vw, (max-width: 767px) 92vw, (max-width: 991px) 46vw, 48vw"
-          alt=""
-          class="half-photo" />
-        <div>Today Downtown CREDO coffee operates three name-your-price coffee shops and carefully roasts coffee for
-          select wholesale partners. CREDO Conduit has grown into a porous society of companies and individuals
-          committed to the notion that our work gets better when we come alongside people who’re different from us. We
-          convene that society in our very own co-working space. Rally has spun off into its own non-profit in
-          partnership with the Central Florida Foundation and Rollins College with the mission of elevating Orlando
-          into a regional hub for new social enterprises. CREDO’s neighborhood organizing efforts also spun off into
-          its own non-profit called Orlando Together with the mission of fortifying cities and organizations by
-          undermining racial divisions. <br />‍<br />We’re learning that if you pursue a life of meaning impact and
-          community and start with steps so small they seem silly, you may not know where you’ll end up—but it will
-          certainly be good. We’d definitely encourage you to launch your own pursuit of meaning, impact and community
-          (make sure to bring good coffee).<br /></div>
-      </div>
+      {% endfor %}
     </div>
     <h2 class="center">downtown credo podcast</h2>
-    <div class="html-embed w-embed w-iframe"><iframe width="100%" height="166" scrolling="no" frameborder="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/566263815&color=%23ffc853&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-    </div>
-    <div class="html-embed w-embed w-iframe"><iframe width="100%" height="166" scrolling="no" frameborder="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/582358413&color=%23ffc853&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-    </div>
-    <div class="html-embed w-embed w-iframe"><iframe width="100%" height="166" scrolling="no" frameborder="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/603564975&color=%23ffc853&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-    </div>
+    {% include podcast-player.html %}
   </div>
 </div>
