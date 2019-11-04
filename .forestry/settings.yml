@@ -4,6 +4,9 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: document
+  path: index.html
+  label: Homepage
 - type: directory
   path: _locations
   label: Locations
@@ -11,9 +14,6 @@ sections:
   match: "**/*"
   templates:
   - location
-- type: document
-  path: index.html
-  label: Homepage
 - type: document
   path: people.html
   label: People
