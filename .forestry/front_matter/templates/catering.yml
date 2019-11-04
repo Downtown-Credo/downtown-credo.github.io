@@ -33,18 +33,13 @@ fields:
   name: image
   label: image
   fields:
+  - name: title
+    type: text
+    config:
+      required: false
+    label: Title
   - type: file
-    name: src
-    label: src
-  - type: field_group_list
-    name: srcset
-    label: srcset
-    fields:
-    - type: file
-      name: src
-      label: src
-    - type: text
-      name: size
-      label: size
+    name: source
+    label: Source
 pages:
 - catering.html
