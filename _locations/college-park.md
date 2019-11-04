@@ -25,7 +25,5 @@ open:
 phone: "(407) 519-0643"
 year_opened: 2010
 image: "/v1572901403/college-park_b6qz2v.jpg"
-menu:
-  "/credo-menu.pdf": {}
-
+menu: "credo-menu.pdf"
 ---
