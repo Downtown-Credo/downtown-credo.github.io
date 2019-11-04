@@ -24,7 +24,5 @@ open:
   hours: 8am-6pm
 phone: "(407) 519-0643"
 year_opened: 2010
-menu:
-  "/credo-menu.pdf": {}
-
+menu: "/credo-menu.pdf"
 ---
