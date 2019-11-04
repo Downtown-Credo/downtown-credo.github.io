@@ -18,3 +18,8 @@ defaults:
       path: ""
     values:
       layout: "default"
+  -
+    scope:
+      path: "locations"
+    values:
+      layout: "location"
