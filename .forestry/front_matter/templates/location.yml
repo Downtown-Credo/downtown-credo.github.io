@@ -50,6 +50,6 @@ fields:
     required: false
   label: Menu
 pages:
-- locations/college-park.md
 - locations/north-quarter.md
 - locations/health-village.md
+- locations/college-park.md
