@@ -49,83 +49,37 @@ permalink: "/"
 </section>
 <section id="learn-more" class="section">
   <h1 class="center">Our Locations</h1>
+  {% assign sizes = "1080, 1280" | split: ", " %}
   <div class="_3col-equal">
+    {% for location in site.locations %}
     <div class="one-third">
-      <div class="home--division--wrap w-clearfix"><img
-          src="/img/58c844c65f9c3ff64de043c9_collage-park-hero-2.jpg"
-          srcset="/img/58c844c65f9c3ff64de043c9_collage-park-hero-2-p-1080x720.jpeg 1080w, /img/58c844c65f9c3ff64de043c9_collage-park-hero-2.jpg 1280w"
-          sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 94vw, 33vw" alt=""
-          class="image-full-width" />
-        <h2 class="home--division--title">College Park</h2>
-      </div>
-      <div class="container">
-        <div>The original CREDO headquarters, this shop feels like someone dropped a direct-trade espresso bar into
-          your living room or home office. First designed by Stephan Monteserin to be a comfortable space to join
-          CREDO&#x27;s movement, the space has slowly evolved over the years but maintained the same ethic. It&#x27;s
-          our only location open 7days a week, there&#x27;s an intimate back room available for private meetings, and
-          the whole space can be rented out in the evenings.</div>
-        <a href="#" target="_blank" class="text-link popup" data-form="rent-form">Rent this space ⟶</a>
-        <h4>Address:</h4>
-        <div>706 W Smith St Orlando, FL 32804</div>
-        <h4>Hours of operations</h4>
-        <div><strong>Monday – Friday:</strong> 7am–6pm<br /><strong>Saturday – Sunday:</strong> 8am–6pm</div>
-        <h4>Menu</h4><a href="/credo-menu.pdf" target="_blank"
-          class="text-link">College Park Menu ⟶</a>
-        <h4>Contact</h4>
-        <div>(407) 519-0643</div>
-      </div>
-    </div>
-    <div class="one-third">
-      <div class="home--division--wrap w-clearfix"><img
-          src="/img/58c845366cb5a14e07b509cc_health-village-hero.jpg"
-          srcset="/img/58c845366cb5a14e07b509cc_health-village-hero-p-500x334.jpeg 500w, /img/58c845366cb5a14e07b509cc_health-village-hero.jpg 1280w"
-          sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 94vw, 33vw" alt=""
-          class="image-full-width" />
-        <h2 class="home--division--title">Health Village</h2>
-      </div>
-      <div class="container">
-        <div>This location opened its doors in 2015 at the invitation of Florida Hospital with the vision of becoming
-          the neighborhood coffee shop for the burgeoning Health Village. Outlined with a 30&#x27; high wall of
-          windows right along the Sun Rail route, it&#x27;s an inspiring place to work or meet and get things done.
-          Open five days a week, and the mezzanine or whole space is available to rent for private events. Parking is
-          available at two garages and we&#x27;ll validate.</div>
-        <a href="#" target="_blank" class="text-link popup" data-form="rent-form">Rent this space ⟶</a>
-        <h4>Address:</h4>
-        <div>550 E Rollins St Orlando, FL 32803</div>
-        <h4>Hours of operations</h4>
-        <div><strong>Monday – Friday:</strong> 6am–6pm<br /><strong>Saturday, Sunday:</strong> Closed</div>
-        <h4>Menu</h4><a href="/credo-menu.pdf" target="_blank"
-          class="text-link">Health Village Coffee Menu ⟶</a>
-        <h4>Contact</h4>
-        <div>(407) 519-0643</div>
-      </div>
-    </div>
-    <div class="one-third"><img
-        src="/img/58c845da1ea0b41e61f3fc58_nq-hero.jpg"
-        srcset="/img/58c845da1ea0b41e61f3fc58_nq-hero-p-500x334.jpeg 500w, /img/58c845da1ea0b41e61f3fc58_nq-hero.jpg 1280w"
-        sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 94vw, 33vw" alt=""
-        class="image-full-width" />
       <div class="home--division--wrap w-clearfix">
-        <h2 class="home--division--title">North Quarter</h2>
+        <img
+          src="{{ site.cloudinary }}{{ location.image }}"
+          alt="{{ location.title }}"
+          sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 94vw, 33vw"
+          srcset="{% for size in sizes %}{{ site.cloudinary }}/c_scale,w_{{ size }}{{ location.image }} {{ size }}w, {% endfor %}"
+          class="image-full-width" />
+        <h2 class="home--division--title">{{ location.title }}</h2>
       </div>
       <div class="container">
-        <div>Our first co-location, this shop is inside the North Quarter Market at the base of the NORA building. The
-          market also hosts The Farmacy (a local and organic grocery store), Pop Parlour popsicles and Never Say Die
-          Bikes (refurbished vintage road bikes). The place feels bright and energetic and makes a young neighborhood
-          even more inviting. Open six days a week, it&#x27;s a great spot to start your day or take a lunch break.
-        </div>
+        <div>{{ location.details }}</div>
         <a href="#" target="_blank" class="text-link popup" data-form="rent-form">Rent this space ⟶</a>
         <h4>Address:</h4>
-        <div>885 N Orange Ave, Orlando, FL 32801</div>
+        <div>{{ location.map.address }}</div>
         <h4>Hours of operations</h4>
-        <div><strong>Monday – Friday:</strong> 7am–6pm<br /><strong>Saturday:</strong>
-          8am–6pm<br /><strong>Sunday:</strong> Closed</div>
-        <h4>Menu</h4><a href="/credo-menu.pdf" target="_blank"
-          class="menu-link">North Quarter Coffee Menu ⟶</a>
+        <div>
+          {% for entry in open %}
+          <strong>{{ entry.day }}:</strong> {{ entry.hours }}<br />
+          {% endfor %}
+        </div>
+        <h4>Menu</h4>
+        <a href="{{ location.menu }}" target="_blank" class="text-link">{{ location.title }} Menu ⟶</a>
         <h4>Contact</h4>
-        <div>(407) 519-0643</div>
+        <div>{{ location.phone }}</div>
       </div>
     </div>
+    {% endfor %}
   </div>
 </section>
 <section id="learn-more" class="section greybg">
