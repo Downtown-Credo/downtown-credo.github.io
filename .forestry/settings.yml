@@ -12,6 +12,8 @@ sections:
   label: Locations
   create: documents
   match: "**/*"
+  templates:
+  - location
 - type: document
   path: people.html
   label: People
