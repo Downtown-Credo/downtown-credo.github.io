@@ -4,14 +4,14 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: document
+  path: index.html
+  label: Homepage
 - type: directory
   path: locations
   label: Locations
   create: documents
   match: "**/*"
-- type: document
-  path: index.html
-  label: Homepage
 - type: document
   path: people.html
   label: People
