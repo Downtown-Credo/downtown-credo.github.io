@@ -1,0 +1,54 @@
+---
+label: Coffee
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: field_group
+  name: meta
+  label: meta
+  fields:
+  - type: textarea
+    name: description
+    label: description
+  - type: file
+    name: image
+    label: image
+- type: field_group
+  name: text
+  label: text
+  fields:
+  - type: textarea
+    name: first
+    label: first
+  - type: textarea
+    name: second
+    label: second
+  - type: textarea
+    name: third
+    label: third
+- type: field_group
+  name: slider
+  label: slider
+  fields:
+  - type: field_group_list
+    name: first
+    label: first
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: file
+      name: image
+      label: image
+  - type: field_group_list
+    name: second
+    label: second
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: file
+      name: image
+      label: image
