@@ -4,6 +4,40 @@ meta:
   description: >-
     We host direct-trade coffee shops because we want to encourage folks to take small steps toward meaning and impact in community. We got into coffee philosophically, but we also love great coffee. Smart roasting is a key step in great coffee. Our roasting happens in small batches downtown in close collaboration with Coffee Roasters Alliance. You&#x27;ll always be drinking coffee at its peak freshness. Our aim is to for the roast to draw out the substantial flavors of our carefully selected beans, so you can enjoy all the flavors our growers work so hard to produce.
   image: "/img/meta/homepage.png"
+text:
+  first: |
+    All of our coffee origins start with a relationship; somebody knows somebody who&#x27;s growing coffee. Once we make a connection, we evaluate the growers&#x27; goals. Those goals need to include positive outcomes for the people and environment they directly affect. Most of our growers pick their own coffee. If they are hiring pickers, they need to be contributing holistically to improving their quality of life.
+
+    #### Guatemala
+
+    This is our first origin. We met them through some friends and made our first of three trips down in the fall of 2010 to spend time with them. It comes from a dozen or so growers in half a dozen villages throughout the Ixill region of the Quiche district in the mountains of Guatemala. It&#x27;s grown at 4-5.5k ft.
+
+    #### Nicaragua
+
+    We&#x27;ve been working with this co-op of former Sandinista fighters in El Porvenir Nicaragua since 2012. They produce the coffee on their property and use the sale to help sustain their cooperative. It&#x27;s imported through some friends in South Carolina and we roast it here.
+  second: |
+    We host direct-trade coffee shops because we want to encourage folks to take small steps toward meaning and impact in community. We got into coffee philosophically, but we also love great coffee. Smart roasting is a key step in great coffee. Our roasting happens in small batches downtown in close collaboration with Coffee Roasters Alliance. You&#x27;ll always be drinking coffee at its peak freshness. Our aim is to for the roast to draw out the substantial flavors of our carefully selected beans, so you can enjoy all the flavors our growers work so hard to produce.
+  third: |
+    #### Mexico
+
+    We met Jose through Dr. Conway at Rollins college. In 2017 Ben traveled to Chiapas to meet Jose and see the way is direct sale of coffee improves the quality of lives in the villages where he works. What he found was a collaborative effort between Rainforest Alliance, Heifer International, the Mexican government and a large restaurant chain to improve production and quality of life. We’re excited to support their work by buying their coffee. We’re aiming to become the first to bring their beautiful volcano grown coffee into the states.
+slider:
+  first:
+    - title:
+      image: "/img/beans.jpg"
+    - title:
+      image: "/img/drying.jpg"
+    - title:
+      image: "/img/growing-drying.jpg"
+    - title:
+      image: "/img/collecting-washing.jpg"
+  second:
+    - title:
+      image: "/img/roast.jpg"
+    - title:
+      image: "/img/bag.jpg"
+    - title:
+      image: "/img/dispense.jpg"
 ---
 
 <section class="hero">
@@ -16,36 +50,18 @@ meta:
 </section>
 <div class="section">
   <div class="container">
-    <div>All of our coffee origins start with a relationship; somebody knows somebody who&#x27;s growing coffee. Once
-      we make a connection, we evaluate the growers&#x27; goals. Those goals need to include positive outcomes for the
-      people and environment they directly affect. Most of our growers pick their own coffee. If they are hiring
-      pickers, they need to be contributing holistically to improving their quality of life.</div>
-    <h4>Guatemala</h4>
-    <div>This is our first origin. We met them through some friends and made our first of three trips down in the fall
-      of 2010 to spend time with them. It comes from a dozen or so growers in half a dozen villages throughout the
-      Ixill region of the Quiche district in the mountains of Guatemala. It&#x27;s grown at 4-5.5k ft.</div>
-    <h4>Nicaragua</h4>
-    <div>We&#x27;ve been working with this co-op of former Sandinista fighters in El Porvenir Nicaragua since 2012.
-      They produce the coffee on their property and use the sale to help sustain their cooperative. It&#x27;s imported
-      through some friends in South Carolina and we roast it here.</div>
+    {{ page.text.first | markdownify }}
+    {% assign sizes = "500, 800, 1080, 1280" | split: ", " %}
     <div data-animation="slide" data-duration="500" data-infinite="1" class="image-slider w-slider">
       <div class="w-slider-mask">
-        <div class="w-slide"><img
-            src="/img/58e7bb8ef5643b0222327f55_coffee-1.jpg"
-            srcset="/img/58e7bb8ef5643b0222327f55_coffee-1-p-500x.jpeg 500w, /img/58e7bb8ef5643b0222327f55_coffee-1-p-1080x.jpeg 1080w, /img/58e7bb8ef5643b0222327f55_coffee-1.jpg 1280w"
-            sizes="100vw" alt="" /></div>
-        <div class="w-slide"><img
-            src="/img/58e7bb97f5643b0222327f5a_coffee-2.jpg"
-            srcset="/img/58e7bb97f5643b0222327f5a_coffee-2-p-500x.jpeg 500w, /img/58e7bb97f5643b0222327f5a_coffee-2-p-1080x.jpeg 1080w, /img/58e7bb97f5643b0222327f5a_coffee-2.jpg 1280w"
-            sizes="100vw" alt="" /></div>
-        <div class="w-slide"><img
-            src="/img/58e7bba08b583925d456a94d_coffee-3.jpg"
-            srcset="/img/58e7bba08b583925d456a94d_coffee-3-p-500x.jpeg 500w, /img/58e7bba08b583925d456a94d_coffee-3-p-800x.jpeg 800w, /img/58e7bba08b583925d456a94d_coffee-3-p-1080x.jpeg 1080w, /img/58e7bba08b583925d456a94d_coffee-3.jpg 1280w"
-            sizes="100vw" alt="" /></div>
-        <div class="w-slide"><img
-            src="/img/58e7bbabf5643b0222327f61_coffee-4.jpg"
-            srcset="/img/58e7bbabf5643b0222327f61_coffee-4-p-500x.jpeg 500w, /img/58e7bbabf5643b0222327f61_coffee-4-p-800x.jpeg 800w, /img/58e7bbabf5643b0222327f61_coffee-4-p-1080x.jpeg 1080w, /img/58e7bbabf5643b0222327f61_coffee-4.jpg 1280w"
-            sizes="100vw" alt="" /></div>
+        {% for slide in page.slider.first %}
+        <div class="w-slide">
+          <img
+            src="{{ site.cloudinary }}{{ slide.image }}" alt="{{ slide.title }}"
+            srcset="{% for size in sizes %}{{ site.cloudinary }}/c_scale,w_{{ size }}{{ slide.image }} {{ size }}w, {% endfor %}"
+            sizes="100vw" alt="{{ slide.title }}" />
+        </div>
+        {% endfor %}
       </div>
       <div class="w-slider-arrow-left">
         <div class="w-icon-slider-left"></div>
@@ -55,26 +71,17 @@ meta:
       </div>
       <div class="w-slider-nav w-round"></div>
     </div>
-    <div>We host direct-trade coffee shops because we want to encourage folks to take small steps toward meaning and
-      impact in community. We got into coffee philosophically, but we also love great coffee. Smart roasting is a key
-      step in great coffee. Our roasting happens in small batches downtown in close collaboration with Coffee Roasters
-      Alliance. You&#x27;ll always be drinking coffee at its peak freshness. Our aim is to for the roast to draw out
-      the substantial flavors of our carefully selected beans, so you can enjoy all the flavors our growers work so
-      hard to produce.</div>
+    {{ page.text.second | markdownify }}
     <div data-animation="slide" data-duration="500" data-infinite="1" class="image-slider w-slider">
       <div class="w-slider-mask">
-        <div class="w-slide"><img
-            src="/img/58e7b6e8d3d6d81d0f70b357_scaled.IMG_3477.jpg"
-            srcset="/img/58e7b6e8d3d6d81d0f70b357_scaled.IMG_3477-p-1080x.jpeg 1080w, /img/58e7b6e8d3d6d81d0f70b357_scaled.IMG_3477.jpg 1280w"
-            sizes="100vw" alt="" /></div>
-        <div class="w-slide"><img
-            src="/img/58e7b7223b6596345b3bf053_scaled.IMG_3504.jpg"
-            srcset="/img/58e7b7223b6596345b3bf053_scaled.IMG_3504-p-500x.jpeg 500w, /img/58e7b7223b6596345b3bf053_scaled.IMG_3504-p-1080x.jpeg 1080w, /img/58e7b7223b6596345b3bf053_scaled.IMG_3504.jpg 1280w"
-            sizes="100vw" alt="" /></div>
-        <div class="w-slide"><img
-            src="/img/58e7b978819d9a1d52b31367_scaled.IMG_3444.jpg"
-            srcset="/img/58e7b978819d9a1d52b31367_scaled.IMG_3444-p-1080x.jpeg 1080w, /img/58e7b978819d9a1d52b31367_scaled.IMG_3444.jpg 1280w"
-            sizes="100vw" alt="" /></div>
+        {% for slide in page.slider.second %}
+        <div class="w-slide">
+          <img
+            src="{{ site.cloudinary }}{{ slide.image }}" alt="{{ slide.title }}"
+            srcset="{% for size in sizes %}{{ site.cloudinary }}/c_scale,w_{{ size }}{{ slide.image }} {{ size }}w, {% endfor %}"
+            sizes="100vw" alt="{{ slide.title }}" />
+        </div>
+        {% endfor %}
       </div>
       <div class="w-slider-arrow-left">
         <div class="w-icon-slider-left"></div>
@@ -84,11 +91,6 @@ meta:
       </div>
       <div class="w-slider-nav w-round"></div>
     </div>
-    <h4>Mexico<br /></h4>
-    <div>We met Jose through Dr. Conway at Rollins college. In 2017 Ben traveled to Chiapas to meet Jose and see the
-      way is direct sale of coffee improves the quality of lives in the villages where he works. What he found was a
-      collaborative effort between Rainforest Alliance, Heifer International, the Mexican government and a large
-      restaurant chain to improve production and quality of life. We’re excited to support their work by buying their
-      coffee. We’re aiming to become the first to bring their beautiful volcano grown coffee into the states.</div>
+    {{ page.text.third | markdownify }}
   </div>
 </div>
