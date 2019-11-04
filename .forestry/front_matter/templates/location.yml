@@ -44,6 +44,11 @@ fields:
 - type: number
   name: year_opened
   label: year_opened
+- name: menu
+  type: file
+  config:
+    maxSize: 250
+  label: Menu
 pages:
 - locations/north-quarter.md
 - locations/health-village.md
