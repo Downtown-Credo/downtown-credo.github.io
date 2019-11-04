@@ -26,5 +26,8 @@ open:
   hours: Closed
 phone: "(407) 519-0643"
 year_opened: 2016
-menu: "/credo-menu.pdf"
+image: "/v1572901430/north-quarter_yjw1ho.jpg"
+menu:
+  "/credo-menu.pdf": {}
+
 ---
