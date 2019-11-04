@@ -46,3 +46,5 @@ fields:
     - type: text
       name: size
       label: size
+pages:
+- catering.html
