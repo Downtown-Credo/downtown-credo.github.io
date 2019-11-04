@@ -24,5 +24,8 @@ open:
   hours: Closed
 phone: "(407) 519-0643"
 year_opened: 2015
-menu: "/credo-menu.pdf"
+image: "/v1572901417/health-village_tkgeuh.jpg"
+menu:
+  "/credo-menu.pdf": {}
+
 ---
