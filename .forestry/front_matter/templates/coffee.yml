@@ -53,3 +53,5 @@ fields:
     - type: file
       name: image
       label: image
+pages:
+- coffee.html
