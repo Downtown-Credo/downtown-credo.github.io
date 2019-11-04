@@ -44,3 +44,5 @@ fields:
 - type: number
   name: year_opened
   label: year_opened
+pages:
+- locations/college-park.md
