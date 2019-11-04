@@ -7,13 +7,6 @@ sections:
 - type: document
   path: index.html
   label: Homepage
-- type: directory
-  path: locations
-  label: Locations
-  create: documents
-  match: "**/*"
-  templates:
-  - location
 - type: document
   path: people.html
   label: People
