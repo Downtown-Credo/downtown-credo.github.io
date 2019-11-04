@@ -54,3 +54,4 @@ fields:
   config:
     required: false
   label: Menu
+  default: "/credo-menu.pdf"
