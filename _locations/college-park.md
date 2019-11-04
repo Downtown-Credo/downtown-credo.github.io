@@ -24,5 +24,8 @@ open:
   hours: 8am-6pm
 phone: "(407) 519-0643"
 year_opened: 2010
-menu: "/credo-menu.pdf"
+image: "/v1572901403/college-park_b6qz2v.jpg"
+menu:
+  "/credo-menu.pdf": {}
+
 ---
