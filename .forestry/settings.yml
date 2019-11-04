@@ -5,6 +5,9 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: document
+  path: index.html
+  label: Homepage
+- type: document
   path: people.html
   label: People
 - type: document
@@ -19,12 +22,6 @@ sections:
 - type: document
   path: contact.html
   label: Contact
-- type: document
-  path: index.html
-  label: Homepage
-- type: document
-  path: podcast.html
-  label: Podcast
 - type: document
   path: story.html
   label: Story
