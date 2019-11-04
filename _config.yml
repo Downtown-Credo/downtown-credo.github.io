@@ -12,6 +12,9 @@ markdown: kramdown
 plugins:
   - jekyll-menus
 
+collections:
+  locations:
+    output: true
 defaults:
   -
     scope:
@@ -20,6 +23,6 @@ defaults:
       layout: "default"
   -
     scope:
-      path: "locations"
+      type: "locations"
     values:
       layout: "location"

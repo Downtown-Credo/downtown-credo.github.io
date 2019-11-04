@@ -24,7 +24,5 @@ open:
   hours: Closed
 phone: "(407) 519-0643"
 year_opened: 2015
-menu:
-  "/credo-menu.pdf": {}
-
+menu: "/credo-menu.pdf"
 ---
