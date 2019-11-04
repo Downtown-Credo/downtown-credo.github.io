@@ -45,9 +45,9 @@ fields:
   name: year_opened
   label: year_opened
 - name: menu
-  type: file
+  type: text
   config:
-    maxSize: 250
+    required: false
   label: Menu
 pages:
 - locations/college-park.md
