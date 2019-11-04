@@ -30,13 +30,8 @@ details:
 
     _*Supplies and fixings available._
 image:
-  src: "/img/credo-story7.jpg"
-  srcset:
-  - src: "/img/credo-story7-p-500.jpg"
-    size: 500w
-  - src: "/img/credo-story7.jpg"
-    size: 1200w
-
+  title: Credo Tea
+  source: "/img/credo-story7.jpg"
 ---
 <section class="hero">
   {% include navigation.html %}
@@ -58,9 +53,12 @@ image:
       </div>
       <div class="w-col w-col-6">
         {% if page.image %}
-        <img src="{{ page.image.src }}"
-          srcset="{%- for set in page.image.srcset -%}{{ set.src }} {{ set.size }}, {%- endfor -%}"
-          sizes="(max-width: 479px) 96vw, (max-width: 767px) 92vw, (max-width: 991px) 46vw, 48vw" alt="" class="half-photo" />
+        {% assign sizes = "500, 1200" | split: ", " %}
+        <img src="{{ site.cloudinary }}{{ page.image.source }}"
+          srcset="{% for size in sizes %}{{ site.cloudinary }}/c_scale,w_{{ size }}{{ page.image.source }} {{ size }}w, {% endfor %}"
+          sizes="(max-width: 479px) 96vw, (max-width: 767px) 92vw, (max-width: 991px) 46vw, 48vw"
+          alt="{{ page.image.title }}"
+          class="half-photo" />
         </div>
         {% endif %}
       </div>
