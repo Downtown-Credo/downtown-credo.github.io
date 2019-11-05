@@ -35,7 +35,6 @@ sections:
 - type: document
   path: partners.html
   label: Partners
-  match: "**/*"
 - type: jekyll-pages
   label: Pages
   create: all
