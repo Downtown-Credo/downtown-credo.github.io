@@ -45,7 +45,7 @@ permalink: "/rally/partners/"
     <div class="partners-wrap">
       {% for partner in page.partners %}
       <div class="partner">
-        <img src="{{ partner.image }}" alt="">
+        <img src="{{ site.cloudinary }}{{ partner.image }}" alt="">
         <h3>{{ partner.title }}</h3>
         {% if partner.description %}<div>{{ partner.description }}</div>{% endif %}
         <a href="{{ partner.link }}" class="text-link">Website</a>
