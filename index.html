@@ -5,46 +5,113 @@ meta:
     A social enterprise benefit corporation cultivating meaning, impact and community with direct trade coffee shops, co-working space, social enterprise accelerator and city-wide events.
   image: "/img/meta/homepage.png"
 permalink: "/"
+headline: Buying Coffee is a Big Deal
+background_video:
+  poster: "/img/credo-intro-poster.jpg"
+  source:
+    - "/vid/credo-intro-video.mp4"
+    - "/vid/credo-intro-video.webm"
+video:
+  back_text: "back to the site"
+  url: '//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2Fr5yREN7N4b8%3Fstart%3D2%26feature%3Doembed%26start%3D2&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dr5yREN7N4b8&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fr5yREN7N4b8%2Fhqdefault.jpg&args=start%3D2&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube"'
+quote: |
+  In the face of large systemic problems, It&#x27;s easy to suppose there&#x27;s nothing we can do. But systems are rarely changed by big heroic acts. It&#x27;s lots of small successive choices that build up to change. CREDO coffee is a choice. To reject apathy and believe in impact. It&#x27;s not just great coffee, it&#x27;s sourced from families through relationships and brought to you.
+learn_more:
+  - title: Story
+    sections:
+      - title: Our Story
+        description: "Downtown CREDO is a social enterprise benefit corporation committed to inspiring the pursuit of meaning, impact and community"
+        link:
+          title: Read the full story
+          url: "/story"
+      - title: Our Coffee
+        description: "We work hard to locate growers who are producing great coffee and leverage its sale for the benefit of their families, friends and villages. We roast our coffee in small batches right downtown to make sure it's just right and always fresh."
+        link:
+          title: Read more about our coffee
+          url: "/coffee"
+      - title: Podcast
+        link:
+          title: Take a listen
+          url: "/podcast"
+  - title: Shop
+    sections:
+      - title: Coffee & Merch
+        link:
+          title: Go to the Store
+          url: "https://squareup.com/store/downtown-credo/"
+      - title: Gift Cards
+        link:
+          title: Purchase Gift Cards
+          url: "https://squareup.com/store/downtown-credo/"
+      - title: Catering
+        description: "At Credo we believe that coffee is a conduit for pursuing meaning, impact, and community. We roast coffee every week so that you can always enjoy our coffee at its peak freshness. Let us provide our specialty grade coffee for your next event, and you’ll see what we mean."
+        link:
+          title: Learn more about catering
+          url: "/catering"
+      - title: Wholesale
+        description: "Let us partner with you and we will commit to serve you with specialty coffee, the best consulting/training, and the right equipment to make your business a success."
+        link:
+          title: Learn more about wholesale
+          url: "/wholesale"
+  - title: Friends
+    sections:
+      - title: Conduit
+        description: "We're hosting co-working that's convening the creative class and cultivating community."
+        link:
+          title: Visit Website
+          url: "http://credoconduit.com/"
+      - title: Rally Makers
+        description: "Our social enterprise accelerator is helping folks solve real problems and convening Orlando's best mentors."
+        link:
+          title: Visit Website
+          url: "http://rallysea.com/"
+      - title: Orlando Together
+        description: "We're convinced communities are better when they're diverse, so we throw a party once a year to get folks from all over the city together in one spot."
+        link:
+          title: Visit Website
+          url: "http://orlandotogether.org/"
+      - title: Partners
+        description: "We like making an impact in our city but don't want to reinvent the wheel. So we partner with some folks."
+        link:
+          title: Read More
+          url: "/rally/partners"
 ---
 
 <div data-id="video-pop" class="video-pop" style="display:none">
   <div class="overlay-wrapper">
-    <div id="videoplayer-1" style="padding-top:56.17021276595745%"
-      class="vid1 w-node-8909566efbbe-6913a768 w-video w-embed"><iframe class="embedly-embed"
-        src="//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2Fr5yREN7N4b8%3Fstart%3D2%26feature%3Doembed%26start%3D2&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dr5yREN7N4b8&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fr5yREN7N4b8%2Fhqdefault.jpg&args=start%3D2&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube"
-        scrolling="no" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe></div><a href="#"
-      data-ix="close-video" class="close-overlay">⟵ back to the site</a>
+    <div id="videoplayer-1" style="padding-top:56.17021276595745%" class="vid1 w-node-8909566efbbe-6913a768 w-video w-embed">
+      <iframe class="embedly-embed"
+        src="{{ page.video.url }}"
+        scrolling="no" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe>
+      </div>
+      <a href="#" data-ix="close-video" class="close-overlay">⟵ {{ page.video.back_text }}</a>
   </div>
 </div>
 <section class="hero">
   {% include navigation.html %}
   <div
-    data-poster-url="/img/5c2f9cc531b7b2e60786aecd_credo-intro-video-poster-00001.jpg"
-    data-video-urls="/vid/5c2f9cc531b7b2e60786aecd_credo-intro-video-transcode.mp4,/vid/5c2f9cc531b7b2e60786aecd_credo-intro-video-transcode.webm"
-    data-autoplay="true" data-loop="true" data-wf-ignore="true"
+    data-poster-url="{{ page.background_video.poster }}"
+    data-video-urls="{{ page.background_video.source | join: ',' }}"
+    data-autoplay="true" data-loop="true"
     class="hero-content w-background-video w-background-video-atom">
-    <video autoplay="" loop=""
-      style="background-image:url(&quot;/img/5c2f9cc531b7b2e60786aecd_credo-intro-video-poster-00001.jpg&quot;)"
-      muted="" playsinline="" data-wf-ignore="true">
-      <source src="/vid/5c2f9cc531b7b2e60786aecd_credo-intro-video-transcode.mp4" data-wf-ignore="true" />
-      <source src="/vid/5c2f9cc531b7b2e60786aecd_credo-intro-video-transcode.webm" data-wf-ignore="true" />
+    <video autoplay="" loop="" muted="" playsinline=""
+      style="background-image:url('{{ page.background_video.poster }}')">
+      {% for source in page.background_video.source %}
+      <source src="{{ source }}"/>
+      {% endfor %}
     </video>
     <div class="hero-content-cta">
-      <h1 data-ix="home-title" class="hero-heading home">Buying Coffee is a Big Deal</h1>
+      <h1 data-ix="home-title" class="hero-heading home">{{ page.headline }}</h1>
       <a href="#" data-form="video-pop" class="hero-button w-button popup">watch video</a>
     </div><a href="#learn-more" class="learn-more w-inline-block">
-      <div class="text-block">Learn More</div><img
-        src="/img/58d18ed0db037e9e5afe5c9a_down-arrow%402x.png"
-        width="54" data-ix="arrow-bounce" alt="" class="down-arrow" />
+      <div class="text-block">Learn More</div>
+      <img src="/img/down-arrow.png" width="54" data-ix="arrow-bounce" alt="" class="down-arrow" />
     </a>
   </div>
 </section>
 <section class="section credo">
   <div class="container w-container">
-    <div class="quote">In the face of large systemic problems, It&#x27;s easy to suppose there&#x27;s nothing we can
-      do. But systems are rarely changed by big heroic acts. It&#x27;s lots of small successive choices that build up
-      to change. CREDO coffee is a choice. To reject apathy and believe in impact. It&#x27;s not just great coffee,
-      it&#x27;s sourced from families through relationships and brought to you.</div>
+    <div class="quote">{{ page.quote }}</div>
   </div>
 </section>
 <section id="learn-more" class="section">
@@ -84,56 +151,19 @@ permalink: "/"
 </section>
 <section id="learn-more" class="section greybg">
   <div class="_3col-equal">
+    {% for more in page.learn_more %}
     <div class="one-third">
       <div class="home--division--wrap">
-        <h3>Story</h3>
+        <h3>{{ more.title }}</h3>
       </div>
-      <h4>Our Story</h4>
-      <div>Downtown CREDO is a social enterprise benefit corporation committed to inspiring the pursuit of meaning,
-        impact and community</div><a href="/story" class="text-link">Read the full story ⟶</a>
-      <h4>Our Coffee</h4>
-      <div>We work hard to locate growers who are producing great coffee and leverage its sale for the benefit of
-        their families, friends and villages. We roast our coffee in small batches right downtown to make sure
-        it&#x27;s just right and always fresh.</div><a href="/coffee" class="text-link">Read more about our coffee
-        ⟶</a>
-      <h4>Podcast</h4><a href="/podcast" class="text-link">Take a listen ⟶</a>
+      {% for section in more.sections %}
+      {% assign is_external = section.link.url | slice: 0, 4 %}
+      <h4>{{ section.title }}</h4>
+      <div>{{ section.description }}</div>
+      <a href="{{ section.link.url }}" class="text-link">{{ section.link.title }} {% if is_external == "http" %}&UpperRightArrow;︎{% else %}&LongRightArrow;{% endif %}</a>
+      {% endfor %}
     </div>
-    <div class="one-third">
-      <div class="home--division--wrap">
-        <h3>Shop</h3>
-      </div>
-      <h4>Coffee &amp; Merch</h4><a href="https://squareup.com/store/downtown-credo/" target="_blank"
-        class="text-link">Go to the Store ↗︎</a>
-      <h4>Gift Cards</h4><a href="https://squareup.com/store/downtown-credo/" target="_blank"
-        class="text-link">Purchase Gift Cards ↗︎</a>
-      <h4>Catering</h4>
-      <div>At Credo we believe that coffee is a conduit for pursuing meaning, impact, and community. We roast coffee
-        every week so that you can always enjoy our coffee at its peak freshness. Let us provide our specialty grade
-        coffee for your next event, and you’ll see what we mean.</div><a href="/catering" class="text-link">Learn more
-        about catering ⟶</a>
-      <h4>Wholesale</h4>
-      <div>Let us partner with you and we will commit to serve you with specialty coffee, the best
-        consulting/training, and the right equipment to make your business a success.</div>
-        <a href="/wholesale" class="text-link">Learn more about wholesale ⟶</a>
-    </div>
-    <div class="one-third">
-      <div class="home--division--wrap">
-        <h3>Friends</h3>
-      </div>
-      <h4>Conduit</h4>
-      <div>We&#x27;re hosting co-working that&#x27;s convening the creative class and cultivating community.</div><a
-        href="http://credoconduit.com" target="_blank" class="text-link">Visit Website ↗︎</a>
-      <h4>Rally Makers</h4>
-      <div>Our social enterprise accelerator is helping folks solve real problems and convening Orlando&#x27;s best
-        mentors.</div><a href="http://rallysea.com" target="_blank" class="text-link">Visit Website ↗︎</a>
-      <h4>Orlando Together</h4>
-      <div>We&#x27;re convinced communities are better when they&#x27;re diverse, so we throw a party once a year to
-        get folks from all over the city together in one spot.</div><a href="http://orlandotogether.org"
-        target="_blank" class="text-link">Visit Website ↗︎</a>
-      <h4>Partners</h4>
-      <div>We like making an impact in our city but don&#x27;t want to reinvent the wheel. So we partner with some
-        folks.</div><a href="/rally/partners" class="text-link">Read More ⟶</a>
-    </div>
+    {% endfor %}
   </div>
 </section>
 <section class="section newsbg">
