@@ -9,10 +9,86 @@
   });
 
   $('.x').on('click', function() {
-    $(this).parents('.form-pop').css('display', 'none');
+    var $container = $(this).parents('.form-pop');
+    var $form = $container.find('form');
+    var $submit = $(':submit', $form);
+
+    // Hide and reset form.
+    $container.css('display', 'none');
+    $submit
+      .removeAttr('style')
+      .prop('value', 'Submit')
+      .prop('disabled', false)
+      .show();
+    $form.show().siblings().hide();
   })
 
   $("#datepicker").datepicker({});
+
+  $('*[data-post="slack"]').submit(function(e) {
+    var $form = $(this);
+    var $container = $form.parents('.form-pop');
+    var $done = $('.w-form-done', $container);
+    var $fail = $('.w-form-fail', $container);
+    var $submit = $(':submit', $form);
+
+    $submit
+      .css('background-color', '#ddd')
+      .prop('value', $submit.data('wait'))
+      .prop('disabled', true)
+      .hide();
+
+    var v = $(this).serializeArray().reduce(function(a, i) {
+      a[i.name] = i.value;
+      return a;
+    }, {});
+
+    var text = "From: " + v['First-Name'] + ' ' + v['Last-Name'] + "\n";
+    if (v['Phone'] != undefined) {
+      text += "Phone: " + v['Phone'] + "\n";
+    }
+    if (v['Email'] != undefined) {
+      text += "Email: " + v['Email'] + "\n";
+    }
+    if (v['Event-date'] != undefined) {
+      text += "Event date: " + v['Event-date'] + ' From ' + v['Start-time'] + ' to ' + v['End-time'] + "\n";
+    }
+    if (v['Choose-Space'] != undefined) {
+      text += "Location: " + v['Choose-Space'] + "\n";
+    }
+    if (v['coffee'] != undefined) {
+      text += "Coffee service: " + v['coffee'] + "\n";
+    }
+    if (v['espresso'] != undefined) {
+      text += "Espresso bar: " + v['espresso'] + "\n";
+    }
+    if (v['barista'] != undefined) {
+      text += "Barista: " + v['barista'] + "\n";
+    }
+    if (v['Guests'] != undefined) {
+      text += "Number of guests: " + v['Guests'] + "\n";
+    }
+    text += "Notes: " + v['Notes'];
+
+    $.post('https://hooks.slack.com/services/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',
+      JSON.stringify({
+        "username": $(this).data('name'),
+        "channel": $(this).data('channel'),
+        "icon_emoji": $(this).data('icon'),
+        "text": text,
+      }))
+      .always(function() {
+        $form.hide();
+      })
+      .done(function() {
+        $done.show();
+      })
+      .fail(function() {
+        $fail.show();
+      });
+
+    e.preventDefault();
+  });
 
   var supportsAudio = !!document.createElement('audio').canPlayType;
   if (supportsAudio) {
