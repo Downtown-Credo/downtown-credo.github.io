@@ -43,40 +43,25 @@
       return a;
     }, {});
 
-    var text = "From: " + v['First-Name'] + ' ' + v['Last-Name'] + "\n";
-    if (v['Phone'] != undefined) {
-      text += "Phone: " + v['Phone'] + "\n";
-    }
-    if (v['Email'] != undefined) {
-      text += "Email: " + v['Email'] + "\n";
-    }
-    if (v['Event-date'] != undefined) {
-      text += "Event date: " + v['Event-date'] + ' From ' + v['Start-time'] + ' to ' + v['End-time'] + "\n";
-    }
-    if (v['Choose-Space'] != undefined) {
-      text += "Location: " + v['Choose-Space'] + "\n";
-    }
-    if (v['coffee'] != undefined) {
-      text += "Coffee service: " + v['coffee'] + "\n";
-    }
-    if (v['espresso'] != undefined) {
-      text += "Espresso bar: " + v['espresso'] + "\n";
-    }
-    if (v['barista'] != undefined) {
-      text += "Barista: " + v['barista'] + "\n";
-    }
-    if (v['Guests'] != undefined) {
-      text += "Number of guests: " + v['Guests'] + "\n";
-    }
-    text += "Notes: " + v['Notes'];
+    var body = {};
+    body['firstname'] = v['First-Name'] || '';
+    body['lastname'] = v['Last-Name'] || '';
+    body['phone'] = v['Phone'] || '';
+    body['email'] = v['Email'] || '';
+    body['date'] = v['Event-date'] || '';
+    body['start'] = v['Start-time'] || '';
+    body['end'] = v['End-time'] || '';
+    body['space'] = v['Choose-Space'] || '';
+    body['coffee'] = v['coffee'] || '';
+    body['espresso'] = v['espresso'] || '';
+    body['barista'] = v['barista'] || '';
+    body['guests'] = v['Guests'] || '';
+    body['notes'] = v['Notes'] || '';
+    body['name'] = $(this).data('name');
+    body['channel'] = $(this).data('channel');
+    body['icon'] = $(this).data('icon');
 
-    $.post('https://hooks.slack.com/services/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',
-      JSON.stringify({
-        "username": $(this).data('name'),
-        "channel": $(this).data('channel'),
-        "icon_emoji": $(this).data('icon'),
-        "text": text,
-      }))
+    $.post('https://9jkbtkjdj8.execute-api.us-east-1.amazonaws.com/dev/postSlack', JSON.stringify(body))
       .always(function() {
         $form.hide();
       })
