@@ -5,7 +5,7 @@ var filelog = require('gulp-filelog');
 var htmlmin = require('gulp-htmlmin');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
-var gutil = require('gulp-util');
+var log = require('fancy-log');
 var postcss = require('gulp-postcss');
 var uncss = require('uncss').postcssPlugin;
 var cssnano = require('cssnano');
@@ -66,7 +66,7 @@ gulp.task('jekyll', function(gulpCallback) {
     buffer.toString()
       .split(/\n/)
       .forEach(function(message) {
-        gutil.log('Jekyll: ' + message);
+        log('Jekyll: ' + message);
       });
   };
 
@@ -83,7 +83,7 @@ gulp.task('jekyll:serve', function() {
     buffer.toString()
       .split(/\n/)
       .forEach(function(message) {
-        gutil.log('Jekyll: ' + message);
+        log('Jekyll: ' + message);
       });
   };
 
