@@ -1,7 +1,6 @@
 var child = require('child_process');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
-var filelog = require('gulp-filelog');
 var htmlmin = require('gulp-htmlmin');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
@@ -29,8 +28,7 @@ gulp.task('sass', function() {
           '_site/barbers.html',
         ],
       }), cssnano()]))
-    .pipe(gulp.dest('./css'))
-    .pipe(filelog());
+    .pipe(gulp.dest('./css'));
 });
 
 gulp.task('sass:watch', function() {
@@ -45,8 +43,7 @@ gulp.task('js', function() {
   ])
     .pipe(concat('credo.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('js'))
-    .pipe(filelog());
+    .pipe(gulp.dest('js'));
 });
 
 gulp.task('js:watch', function() {
