@@ -6,22 +6,13 @@ var htmlmin = require('gulp-htmlmin');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
-var sequence = require('run-sequence');
 var postcss = require('gulp-postcss');
 var uncss = require('uncss').postcssPlugin;
 var cssnano = require('cssnano');
 
-gulp.task('default', function(done) {
-  sequence('sass', 'js', 'jekyll:serve', 'sass:watch', 'js:watch', done);
-});
-
-gulp.task('build', function(done) {
-  sequence('sass', 'js', 'jekyll', 'html-minify', done);
-});
-
 gulp.task('sass', function() {
   // Compile SASS.
-  return gulp.src('./_css/creedo.scss')
+  return gulp.src('./_css/credo.scss')
     .pipe(sass({
       includePaths: [
         './_css',
@@ -31,7 +22,7 @@ gulp.task('sass', function() {
     })
     .on('error', sass.logError))
     .pipe(postcss([uncss({
-        csspath: '_site/css/creedo.css',
+        csspath: '_site/css/credo.css',
         html: [
           '_site/index.html',
           '_site/appointments.html',
@@ -50,9 +41,9 @@ gulp.task('js', function() {
   // Compile JS.
   return gulp.src([
     './node_modules/foundation-sites/dist/js/foundation.js',
-    './_js/creedo.js',
+    './_js/credo.js',
   ])
-    .pipe(concat('creedo.js'))
+    .pipe(concat('credo.js'))
     .pipe(uglify())
     .pipe(gulp.dest('js'))
     .pipe(filelog());
@@ -99,3 +90,11 @@ gulp.task('jekyll:serve', function() {
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
 });
+
+gulp.task('default', gulp.series('sass', 'js', 'jekyll:serve', 'sass:watch', 'js:watch', function(done) {
+  done();
+}));
+
+gulp.task('build', gulp.series('sass', 'js', 'jekyll', 'html-minify', function(done) {
+  done();
+}));
