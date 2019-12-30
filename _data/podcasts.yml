@@ -1,9 +1,11 @@
 ---
 podcasts:
-  - name: "CREDO Conversation with Kyle Steele and Rob Panepinto"
-    duration: "51:03"
-    file: "/podcasts/credo-conversation-with-kyle-steele-and-rob-panepinto.mp3"
-  - name: "CREDO Conversation with Eddy Moratin and Steve Hogan"
-    duration: "45:52"
-    file: "/podcasts/credo-conversation-with-eddy-moratin-and-steve-hogan.mp3"
----
+- name: CREDO Conversation with Kyle Steele and Rob Panepinto
+  duration: '51:03'
+  file: "/podcasts/credo-conversation-with-kyle-steele-and-rob-panepinto.mp3"
+- name: CREDO Conversation with Eddy Moratin and Steve Hogan
+  duration: '45:52'
+  file: "/podcasts/credo-conversation-with-eddy-moratin-and-steve-hogan.mp3"
+- name: CREDO Coffee & Talk with Cari Coats and Michael Forrest
+  duration: '54:28'
+  file: "/podcasts/credo-conversation-with-cari-coats-and-michael-forrest.mp3"
