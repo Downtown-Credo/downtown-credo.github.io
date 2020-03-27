@@ -149,8 +149,8 @@ learn_more:
         <div>{{ location.map.address }}</div>
         <h4>Hours of operations</h4>
         <div>
-          {% for entry in open %}
-          <strong>{{ entry.day }}:</strong> {{ entry.hours }}<br />
+          {% for entry in location.open %}
+          <strong>{{ entry.days }}:</strong> {{ entry.hours }}<br />
           {% endfor %}
         </div>
         <h4>Menu</h4>
