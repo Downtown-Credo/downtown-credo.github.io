@@ -19,9 +19,9 @@ details: Our first co-location, this shop is inside the North Quarter Market at 
   or take a lunch break.
 open:
 - days: Monday – Friday
-  hours: 7am-6pm
+  hours: 7am-3pm
 - days: Saturday
-  hours: 8am-6pm
+  hours: 8am-12pm
 - days: Sunday
   hours: Closed
 phone: "(407) 519-0643"
