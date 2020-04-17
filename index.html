@@ -144,7 +144,7 @@ learn_more:
       </div>
       <div class="container">
         <div>{{ location.details }}</div>
-        <a href="#" target="_blank" class="text-link popup" data-form="rent-form">Rent this space ⟶</a>
+        {%- if location.rentable -%}<a href="#" target="_blank" class="text-link popup" data-form="rent-form">Rent this space ⟶</a>{%- endif -%}
         <h4>Address:</h4>
         <div>{{ location.map.address }}</div>
         <h4>Hours of operations</h4>
@@ -153,10 +153,14 @@ learn_more:
           <strong>{{ entry.days }}:</strong> {{ entry.hours }}<br />
           {% endfor %}
         </div>
+        {%- if location.menu -%}
         <h4>Menu</h4>
         <a href="{{ location.menu }}" target="_blank" class="text-link">{{ location.title }} Menu ⟶</a>
+        {%- endif -%}
+        {%- if location.phone -%}
         <h4>Contact</h4>
         <div>{{ location.phone }}</div>
+        {%- endif -%}
       </div>
     </div>
     {% endfor %}

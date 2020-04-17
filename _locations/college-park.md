@@ -18,12 +18,9 @@ details: The original CREDO headquarters, this shop feels like someone dropped a
   a week, there&#x27;s an intimate back room available for private meetings, and the
   whole space can be rented out in the evenings.
 open:
-- days: Monday – Friday
-  hours: 7am-3pm
-- days: Saturday, Sunday
-  hours: 8am-3pm
-phone: "(407) 519-0643"
+- days: Saturday – Sunday
+  hours: Closed
 year_opened: 2010
 image: "/v1572901403/college-park_b6qz2v.jpg"
-menu: "credo-menu.pdf"
+rentable: false
 ---

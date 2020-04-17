@@ -26,4 +26,5 @@ phone: "(407) 519-0643"
 year_opened: 2015
 image: "/v1572901417/health-village_tkgeuh.jpg"
 menu: "credo-menu.pdf"
+rentable: true
 ---
