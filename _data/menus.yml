@@ -20,18 +20,21 @@ story:
   url: "/podcast"
   weight: 3
 shop:
-- title: Coffee &amp; Merch
+- title: Coffee
   url: "https://squareup.com/store/downtown-credo/"
   weight: 1
+- title: Merch
+  url: "https://stores.inksoft.com/credo/shop/home"
+  weight: 2
 - title: Gift Cards
   url: "https://squareup.com/store/downtown-credo/"
-  weight: 2
+  weight: 3
 - title: Catering
   url: "/catering"
-  weight: 3
+  weight: 4
 - title: Wholesale
   url: "/wholesale"
-  weight: 4
+  weight: 5
 friends:
 - title: Conduit
   url: "http://credoconduit.com"
