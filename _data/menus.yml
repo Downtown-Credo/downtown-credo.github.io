@@ -1,14 +1,11 @@
 ---
 locations:
-- title: College Park
-  url: "/locations/college-park"
-  weight: 1
 - title: Health Village
   url: "/locations/health-village"
-  weight: 2
+  weight: 1
 - title: North Quarter
   url: "/locations/north-quarter"
-  weight: 3
+  weight: 2
 story:
 - title: Our Story
   url: "/story"
