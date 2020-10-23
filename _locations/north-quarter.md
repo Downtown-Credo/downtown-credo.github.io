@@ -21,7 +21,7 @@ open:
 - days: Monday – Friday
   hours: 7am-3pm
 - days: Saturday
-  hours: 8am-12pm
+  hours: 8am-3pm
 - days: Sunday
   hours: Closed
 phone: "(407) 519-0643"
