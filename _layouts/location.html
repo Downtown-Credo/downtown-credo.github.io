@@ -22,8 +22,8 @@ layout: default
     {%- if page.rentable -%}<a href="#" target="_blank" class="text-link popup" data-form="rent-form">Rent this space ⟶</a>{%- endif -%}
     <h4>Hours of operations</h4>
     <div>
-      {% for entry in open %}
-      <strong>{{ entry.day }}:</strong> {{ entry.hours }}<br />
+      {% for entry in page.open %}
+      <strong>{{ entry.days }}:</strong> {{ entry.hours }}<br />
       {% endfor %}
     </div>
     {%- if page.menu -%}
