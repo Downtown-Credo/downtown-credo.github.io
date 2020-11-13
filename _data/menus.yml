@@ -18,13 +18,13 @@ story:
   weight: 3
 shop:
 - title: Coffee
-  url: "https://squareup.com/store/downtown-credo/"
+  url: "https://shop.downtowncredo.com/"
   weight: 1
 - title: Merch
   url: "https://stores.inksoft.com/credo/shop/home"
   weight: 2
 - title: Gift Cards
-  url: "https://squareup.com/store/downtown-credo/"
+  url: "https://shop.downtowncredo.com/"
   weight: 3
 - title: Catering
   url: "/catering"
