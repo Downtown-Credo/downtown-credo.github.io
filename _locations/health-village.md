@@ -20,8 +20,6 @@ details: This location opened its doors in 2015 at the invitation of Florida Hos
 open:
 - days: Monday – Friday
   hours: 6am-6pm
-- days: Saturday
-  hours: 8am-3pm
 - days: Sunday
   hours: Closed
 phone: "(407) 519-0643"
