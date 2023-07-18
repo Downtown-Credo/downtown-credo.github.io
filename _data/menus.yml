@@ -30,9 +30,6 @@ friends:
 - title: Rally
   url: "http://rallysea.com"
   weight: 2
-- title: Orlando Together
-  url: "http://orlandotogether.org"
-  weight: 3
 navigation:
 - title: Locations
   identifier: locations
