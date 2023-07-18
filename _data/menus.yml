@@ -1,7 +1,7 @@
 ---
 locations:
-- title: Health Village
-  url: "/locations/health-village"
+- title: Mills-50 YMCA
+  url: "/locations/mills50-ymca"
   weight: 1
 - title: North Quarter
   url: "/locations/north-quarter"
