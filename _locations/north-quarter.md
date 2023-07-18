@@ -27,6 +27,6 @@ open:
 phone: "(407) 519-0643"
 year_opened: 2016
 image: "/v1572901430/north-quarter_yjw1ho.jpg"
-menu: "credo-menu.pdf"
+menu: "/menus/north-quarter.pdf"
 rentable: true
 ---

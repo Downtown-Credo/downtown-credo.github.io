@@ -21,6 +21,6 @@ open:
 phone: "(407) 519-0643"
 year_opened: 2023
 image: ""
-menu: "credo-menu.pdf"
+menu: "/menus/mills50-ymca.pdf"
 rentable: false
 ---
