@@ -13,9 +13,6 @@ story:
 - title: Our Coffee
   url: "/coffee"
   weight: 2
-- title: Podcast
-  url: "/podcast"
-  weight: 3
 shop:
 - title: Coffee
   url: "https://shop.downtowncredo.com/"
