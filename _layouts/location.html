@@ -4,7 +4,7 @@ layout: default
 
 <section class="hero">
   {% include navigation.html %}
-  <div data-ix="popup-menu" class="hero-content {{ page.title | downcase | replace: ' ', '-' }}">
+  <div data-ix="popup-menu" class="hero-content {{ page.title | downcase | replace: ' ', '-' }}" style="background-image: linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.5)),url({{ page.banner }})">
     <div class="shop-hero-wrapper">
       <img src="/img/logo-white.svg" width="200" alt="" class="hero--logo" />
       <div class="hero--content--cta--sub--small">convening</div>

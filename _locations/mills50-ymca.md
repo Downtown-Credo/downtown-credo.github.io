@@ -20,7 +20,8 @@ open:
   hours: Closed
 phone: "(407) 519-0643"
 year_opened: 2023
-image: ""
+banner: "/img/location/mills/location-mills-banner.webp"
+image: "/img/location/mills/mills50.webp"
 menu: "/menus/mills50-ymca.pdf"
 rentable: false
 ---

@@ -134,12 +134,7 @@ learn_more:
     {% for location in site.locations %}
     <div class="one-third">
       <div class="home--division--wrap w-clearfix">
-        <img
-          src="{{ site.cloudinary }}{{ location.image }}"
-          alt="{{ location.title }}"
-          sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, (max-width: 991px) 94vw, 33vw"
-          srcset="{% for size in sizes %}{{ site.cloudinary }}/c_scale,w_{{ size }}{{ location.image }} {{ size }}w, {% endfor %}"
-          class="image-full-width" />
+        <img src="{{ location.image }}" alt="{{ location.title }}" class="image-full-width" />
         <h2 class="home--division--title">{{ location.title }}</h2>
       </div>
       <div class="container">

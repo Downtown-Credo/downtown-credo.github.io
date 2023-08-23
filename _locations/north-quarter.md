@@ -28,7 +28,8 @@ open:
   hours: Closed
 phone: "(407) 519-0643"
 year_opened: 2016
-image: "/v1572901430/north-quarter_yjw1ho.jpg"
+banner: "/img/location/north-quarter/location-north-quarter-banner.webp"
+image: "/img/location/north-quarter/north-quarter.webp"
 menu: "/menus/north-quarter.pdf"
 rentable: true
 ---

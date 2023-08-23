@@ -33,10 +33,11 @@ story:
     CREDO Conduit has grown into a co-working space where a community of companies and individuals is committed to the notion that our work gets better when we come alongside people who are different from us. Rally has spun off into its own non-profit in partnership with the Central Florida Foundation and Rollins College with the mission of elevating Orlando into a regional hub for new social enterprises. CREDO&#x27;s original neighborhood organizing efforts also spun off into its own non-profit called Orlando Together with the mission of fortifying cities and organizations by undermining racial divisions.
 
     Downtown CREDO now operates two name-your-price coffee shops and carefully roasts coffee for select wholesale partners. We&#x27;re learning that if you pursue a life of meaning impact and community and start with steps so small they seem silly, you may not know where you&#x27;ll end up—but it will certainly be good. We&#x27;d definitely encourage you to launch your own pursuit of meaning, impact and community (just make sure to bring good coffee).
+image: /img/story/our-story-banner.webp
 ---
 <section class="hero">
   {% include navigation.html %}
-  <div data-ix="popup-menu" class="hero-content origins">
+  <div data-ix="popup-menu" class="hero-content origins {{ page.title | downcase | replace: ' ', '-' }}" style="background-image: linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.5)),url({{ page.image }})">
     <div class="hero-content-cta">
       <h1 class="hero-heading white">{{ page.title }}</h1>
     </div>
