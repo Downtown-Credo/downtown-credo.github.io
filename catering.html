@@ -6,29 +6,31 @@ meta:
     growers&#x27; goals. Those goals need to include positive outcomes for the people
     and environment they directly affect. Most of our growers pick their own coffee.
     If they are hiring pickers, they need to be contributing holistically to improving
-    their quality of life.   '
+    their quality of life.'
   image: "/img/meta/homepage.png"
-heading: At Credo we believe that coffee is a conduit for pursuing meaning, impact,
-  and community. We roast coffee every week so that you can always enjoy our coffee
-  at its peak freshness. Let us provide our specialty grade coffee for your next event,
-  and you&#x27;ll see what we mean.
+heading: "At Credo we believe that coffee is a conduit for pursuing meaning, impact,
+  and community. We roast coffee every week so that you can always enjoy our coffee at
+  its peak freshness. When crafting a food program for downtown credo, it made sense
+  to default towards a plant-forward approach with the intentionality that we seek to
+  believe&mldr;"
+
 details:
-- title: Batch Brew
-  description: |
-    We offer freshly brewed coffee in large batches, ready to serve at any event. Our coffee is brewed into large cambros and made available for pickup on the day of.
+- description: |
+    When crafting a food program for Downtown CREDO, embracing a plant-based approach
+    felt necessary in order to align with the intentionality of CREDO&#x27;s commitment to
+    examining how our daily choices impact our communities. Just as we aim to encourage
+    each other to pursue lives of meaning, we strive to make menu and ingredient choices
+    that have positive impacts. The growing popularity of plant-based fare comes from a
+    rising social consciousness that seeks to understand the impact our food choices have
+    on the environment. Offering vegan fare allows us to extend our commitment to social
+    responsibility and sustainability from seed to cup, and now to plate. Whether it&#x27;s
+    ethically sourced direct trade coffee or in-house made, plant-forward dishes, we aim
+    to nurture people and the planet through intentional decisions.
 
-    1 cambro serves about 60 people.
-
-    _*Supplies and fixings can be added to each order._
-- title: Chemex Service
-  description: |
-    For those that might want a more personalized touch to the coffee experience, we offer a Chemex station.
-
-    This includes one of our baristas at each station preparing each cup of coffee, brewed out of our Chemex.
-
-    1 Chemex brews about 4 cups of coffee.
-
-    _*Supplies and fixings available._
+    The best part is, regardless of dietary, religious and lifestyle choices, we&#x27;ll
+    make the needed accommodations to nourish you. We are mindful of top allergens and
+    cater to them with utmost care. Let us provide food and coffee for your next event,
+    and you&#x27;ll see what we mean.
 image:
   title: Credo Tea
   source: "/v1572899683/tea_huevsy.jpg"
@@ -46,26 +48,14 @@ image:
   <div class="container">
     <div class="credo-text">{{ page.heading }}</div>
     <div class="columns w-row">
-      <div class="w-col w-col-6">
+      <div class="w-col">
         {% for detail in page.details %}
-        <h2>{{ detail.title }}</h2>
         <div>{{ detail.description | markdownify }}</div>
         {% endfor %}
       </div>
-      <div class="w-col w-col-6">
-        {% if page.image %}
-        {% assign sizes = "500, 1200" | split: ", " %}
-        <img src="{{ site.cloudinary }}{{ page.image.source }}"
-          srcset="{% for size in sizes %}{{ site.cloudinary }}/c_scale,w_{{ size }}{{ page.image.source }} {{ size }}w, {% endfor %}"
-          sizes="(max-width: 479px) 96vw, (max-width: 767px) 92vw, (max-width: 991px) 46vw, 48vw"
-          alt="{{ page.image.title }}"
-          class="half-photo" />
-        </div>
-        {% endif %}
-      </div>
     </div>
     <div class="center">
-      <a href="#" class="button w-button popup" data-form="catering-form">Inquire about Catering ⟶</a>
+      <a href="#" class="button w-button popup" data-form="catering-form">Contact us for Catering menu and pricing ⟶</a>
     </div>
   </div>
 </div>

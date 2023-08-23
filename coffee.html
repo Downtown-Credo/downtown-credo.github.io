@@ -74,11 +74,11 @@ slider:
     image: "/v1572896869/collecting-washing_rhobvr.jpg"
   second:
   - title: Roast
-    image: "/v1572896890/roast_xsjqjj.jpg"
+    image: "/img/our-coffee/roast.webp"
   - title: Bag
-    image: "/v1572896905/bag_qpsaxn.jpg"
+    image: "/img/our-coffee/bag.webp"
   - title: Dispense
-    image: "/v1572896918/dispense_lywr6e.jpg"
+    image: "/img/our-coffee/dispense.webp"
 image: /img/our-coffee/our-coffee-banner.webp
 ---
 <section class="hero">
@@ -92,35 +92,12 @@ image: /img/our-coffee/our-coffee-banner.webp
 <div class="section">
   <div class="container">
     {{ page.text.first | markdownify }}
-    {% assign sizes = "500, 800, 1080, 1280" | split: ", " %}
-    <div data-animation="slide" data-duration="500" data-infinite="1" class="image-slider w-slider">
-      <div class="w-slider-mask">
-        {% for slide in page.slider.first %}
-        <div class="w-slide">
-          <img
-            src="{{ site.cloudinary }}{{ slide.image }}" alt="{{ slide.title }}"
-            srcset="{% for size in sizes %}{{ site.cloudinary }}/c_scale,w_{{ size }}{{ slide.image }} {{ size }}w, {% endfor %}"
-            sizes="100vw" alt="{{ slide.title }}" />
-        </div>
-        {% endfor %}
-      </div>
-      <div class="w-slider-arrow-left">
-        <div class="w-icon-slider-left"></div>
-      </div>
-      <div class="w-slider-arrow-right">
-        <div class="w-icon-slider-right"></div>
-      </div>
-      <div class="w-slider-nav w-round"></div>
-    </div>
     {{ page.text.second | markdownify }}
     <div data-animation="slide" data-duration="500" data-infinite="1" class="image-slider w-slider">
       <div class="w-slider-mask">
         {% for slide in page.slider.second %}
         <div class="w-slide">
-          <img
-            src="{{ site.cloudinary }}{{ slide.image }}" alt="{{ slide.title }}"
-            srcset="{% for size in sizes %}{{ site.cloudinary }}/c_scale,w_{{ size }}{{ slide.image }} {{ size }}w, {% endfor %}"
-            sizes="100vw" alt="{{ slide.title }}" />
+          <img src="{{ slide.image }}" alt="{{ slide.title }}" />
         </div>
         {% endfor %}
       </div>

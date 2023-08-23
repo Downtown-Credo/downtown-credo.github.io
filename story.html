@@ -18,8 +18,8 @@ credo: Life is worth living. I refuse to merely exist. I pursue a life of meanin
   my city, and myself to make an impact for good. I am not alone. I press through
   narcissism, isolation and self-sufficiency striving to live in authentic community.
 story:
-- image: "/v1572895229/couch_ohntcm.jpg"
-  image_alt: Couch
+- image: "/img/story/bags.webp"
+  image_alt: Coffee bags
   text: |
     We move toward this CREDO with successive small choices, like our cups of coffee. We're convinced that *buying a cup of coffee is a big deal*. Our coffee is carried down mountains, shipped across oceans and carefully roasted just for you. Each cup of CREDO coffee not only tastes great, but it has a positive impact on the people who touch it. We build relationships with our growers and suppliers to avoid supporting exploitation of people or environment; and we pay growers as directly as possible to get as much money in their hands as we can. Your coffee purchase always supports a system; our system is making an impact for good. That's why we have you name your price for coffee in the cafés— at CREDO you don't just buy a cup, you decide how you will engage the supply chain.
 
@@ -27,8 +27,8 @@ story:
 
     Very quickly the challenging work of network cultivation was organized into three divisions: Coffee, Rally, and Conduit. Each of these divisions created opportunities for folks to not only be introduced to a life animated by the CREDO, but to step into the growing web of people who&#x27;ve committed to it.
 
-- image: "/v1572895241/credo-college-park-shop_x2aejq.jpg"
-  image_alt: Downtown Credo College Park shop
+- image: "/img/story/north-quarter-inside.webp"
+  image_alt: Downtown Credo North Quarter shop
   text: |
     CREDO Conduit has grown into a co-working space where a community of companies and individuals is committed to the notion that our work gets better when we come alongside people who are different from us. Rally has spun off into its own non-profit in partnership with the Central Florida Foundation and Rollins College with the mission of elevating Orlando into a regional hub for new social enterprises. CREDO&#x27;s original neighborhood organizing efforts also spun off into its own non-profit called Orlando Together with the mission of fortifying cities and organizations by undermining racial divisions.
 
@@ -52,10 +52,8 @@ image: /img/story/our-story-banner.webp
       {% for item in page.story %}
       <div class="w-col w-col-6">
       <img
-        src="{{ site.cloudinary }}{{ item.image }}"
+        src="{{ item.image }}"
         alt="{{ item.image_alt }}"
-        sizes="(max-width: 479px) 96vw, (max-width: 767px) 92vw, (max-width: 991px) 46vw, 48vw"
-        srcset="{% for size in sizes %}{{ site.cloudinary }}/c_scale,w_{{ size }}{{ item.image }} {{ size }}w, {% endfor %}"
         class="half-photo" />
         <div>{{ item.text | markdownify }}</div>
       </div>
