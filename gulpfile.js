@@ -1,63 +1,92 @@
-var child = require('child_process');
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var htmlmin = require('gulp-htmlmin');
-var sass = require('gulp-sass')(require('sass'));
-var uglify = require('gulp-uglify');
-var log = require('fancy-log');
-var postcss = require('gulp-postcss');
-var uncss = require('uncss').postcssPlugin;
-var cssnano = require('cssnano');
+import gulp from 'gulp';
+import { spawn } from 'child_process';
+import concat from 'gulp-concat';
+import htmlmin from 'gulp-htmlmin';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
+import terser from 'gulp-terser';
+import postcss from 'gulp-postcss';
+import purgecss from '@fullhuman/postcss-purgecss';
+import cssnano from 'cssnano';
+import removeComments from 'postcss-discard-comments';
+import sourcemaps from 'gulp-sourcemaps';
+import { default as log } from 'fancy-log';
 
-gulp.task('sass', function() {
-  // Compile SASS.
-  return gulp.src('./_css/credo.scss')
+// Dev
+export const cssDev = () => gulp.src('./_css/style.scss')
     .pipe(sass({
       includePaths: [
         './_css',
-        './node_modules/foundation-sites/scss',
+        './node_modules/bootstrap/scss',
       ],
-      //outputStyle: 'compressed'
     })
     .on('error', sass.logError))
-    .pipe(postcss([uncss({
-        csspath: '_site/css/credo.css',
-        html: [
-          '_site/index.html',
-          '_site/appointments.html',
-          '_site/barbers.html',
-        ],
-      }), cssnano()]))
     .pipe(gulp.dest('./css'));
-});
 
-gulp.task('sass:watch', function() {
-  gulp.watch('./_css/**/*.scss', ['sass']);
-});
+export const cssWatch = () => gulp.watch('./_css/**/*.scss', cssDev);
 
-gulp.task('js', function() {
-  // Compile JS.
-  return gulp.src([
-    './node_modules/foundation-sites/dist/js/foundation.js',
-    './_js/credo.js',
+export const jsDev = () => gulp.src([
+    './node_modules/jquery/dist/jquery.js',
   ])
-    .pipe(concat('credo.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('js'));
-});
+  .pipe(sourcemaps.init())
+  .pipe(concat('script.js'))
+  .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest('js'));
 
-gulp.task('js:watch', function() {
-  gulp.watch('./_js/**/*.js', ['js']);
-});
+export const jsWatch = () => gulp.watch('./_js/**/*.js', jsDev);
 
-gulp.task('html-minify', function() {
-  return gulp.src('_site/**/*.html')
-    .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('_site'));
-});
+export const jekyllServe = () => {
+  const jekyll = spawn('bundle', ['exec', 'jekyll', 'serve']);
 
-gulp.task('jekyll', function(gulpCallback) {
-  const jekyll = child.spawn('jekyll', ['build']);
+  const jekyllLogger = function(buffer) {
+    buffer.toString()
+      .split(/\n/)
+      .forEach(function(message) {
+        log('Jekyll: ' + message);
+      });
+  };
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+}
+
+//export const dev = gulp.series(cssDev, jsDev, gulp.parallel(jekyllServe, cssWatch, jsWatch));
+export const dev = jekyllServe;
+
+// Prod
+export const cssProd = () => gulp.src('./_css/style.scss')
+    .pipe(sass({
+      includePaths: [
+        './_css',
+        './node_modules/bootstrap/scss',
+      ],
+    })
+    .on('error', sass.logError))
+    .pipe(postcss([purgecss({
+        content: [
+          '_site/**/*.html'
+        ]
+      }),
+      removeComments({ removeAll: true }),
+      cssnano()
+    ]))
+    .pipe(gulp.dest('./_site/css'));
+
+export const jsProd = () => gulp.src([
+      './node_modules/bootstrap/dist/js/bootstrap.bundle.js'
+    ])
+    .pipe(concat('script.js'))
+    .pipe(terser({
+      toplevel: true,
+      format: {
+        comments: false
+      }
+    }))
+    .pipe(gulp.dest('_site/js'));
+
+export const jekyll = (gulpCallback) => {
+  const jekyll = spawn('bundle', ['exec', 'jekyll', 'build']);
 
   const jekyllLogger = function(buffer) {
     buffer.toString()
@@ -71,27 +100,9 @@ gulp.task('jekyll', function(gulpCallback) {
   jekyll.stderr.on('data', jekyllLogger);
 
   jekyll.on('exit', gulpCallback);
-});
+}
 
-gulp.task('jekyll:serve', function() {
-  const jekyll = child.spawn('bundle', ['exec', 'jekyll', 'serve']);
+//export const build = gulp.series(jekyll, cssProd, jsProd);
+export const build = jekyll;
 
-  const jekyllLogger = function(buffer) {
-    buffer.toString()
-      .split(/\n/)
-      .forEach(function(message) {
-        log('Jekyll: ' + message);
-      });
-  };
-
-  jekyll.stdout.on('data', jekyllLogger);
-  jekyll.stderr.on('data', jekyllLogger);
-});
-
-gulp.task('default', gulp.series('sass', 'js', 'jekyll:serve', 'sass:watch', 'js:watch', function(done) {
-  done();
-}));
-
-gulp.task('build', gulp.series('sass', 'js', 'jekyll', 'html-minify', function(done) {
-  done();
-}));
+export default dev;
