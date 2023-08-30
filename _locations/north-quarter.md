@@ -20,10 +20,10 @@ details: Our first co-location, this shop is in the North Quarter of
   salads as well as a brunch menu! Open six days a week, it's a great spot to
   start your day, take a lunch break, or peruse for your next favorite book.
 open:
-- days: Monday – Friday
-  hours: 7am-3pm
-- days: Saturday
-  hours: 8am-3pm
+- days: Monday – Saturday
+  hours: 7am-6pm
+- days: "Kitchen: Wednesday – Saturday"
+  hours: 8am-2pm
 - days: Sunday
   hours: Closed
 phone: "(407) 519-0643"
