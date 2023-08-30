@@ -110,6 +110,8 @@ image: /img/our-coffee/our-coffee-banner.webp
   <div class="container">
     {{ page.text.first | markdownify }}
     {{ page.text.second | markdownify }}
+    {{ page.text.third | markdownify }}
+    {{ page.text.fourth | markdownify }}
     <div data-animation="slide" data-duration="500" data-infinite="1" class="image-slider w-slider">
       <div class="w-slider-mask">
         {% for slide in page.slider.second %}
@@ -126,8 +128,6 @@ image: /img/our-coffee/our-coffee-banner.webp
       </div>
       <div class="w-slider-nav w-round"></div>
     </div>
-    {{ page.text.third | markdownify }}
-    {{ page.text.fourth | markdownify }}
     {{ page.text.fifth | markdownify }}
     {{ page.text.sixth | markdownify }}
   </div>
