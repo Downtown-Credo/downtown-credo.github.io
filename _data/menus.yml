@@ -1,8 +1,15 @@
 ---
+menus:
+- title: Coffee
+  url: "/menus/north-quarter.pdf"
+  weight: 1
+- title: Food
+  url: ""
+  weight: 2
 locations:
 - title: North Quarter
   url: "/locations/north-quarter"
-  weight: 2
+  weight: 1
 story:
 - title: Our Story
   url: "/story"
@@ -28,21 +35,24 @@ friends:
   url: "http://rallysea.com"
   weight: 2
 navigation:
+- title: Menus
+  identifier: menus
+  weight: 1
 - title: Locations
   identifier: locations
-  weight: 1
+  weight: 2
 - title: Story
   identifier: story
-  weight: 2
+  weight: 3
 - title: Shop
   identifier: shop
-  weight: 3
+  weight: 4
 - title: Friends
   identifier: friends
-  weight: 4
+  weight: 5
 - title: Contact
   url: "/contact"
-  weight: 5
+  weight: 6
 social:
 - title: Facebook
   url: "https://www.facebook.com/downtowncredo"
