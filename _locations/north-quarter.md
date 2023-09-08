@@ -8,7 +8,7 @@ meta:
     and full meals from our vegan kitchen, featuring toasts, sandwiches, and
     salads as well as a brunch menu! Open six days a week, it's a great spot to
     start your day, take a lunch break, or peruse for your next favorite book.
-  image: "/img/meta/north-quarter.jpg"
+  image: "/img/meta/north-quarter.webp"
 map:
   address: 885 N Orange Ave, Orlando, FL 32801
   latlong: 28.556051,-81.3792344
