@@ -1,11 +1,15 @@
 ---
-locations:
-- title: Health Village
-  url: "/locations/health-village"
+menus:
+- title: Coffee
+  url: "/menus/north-quarter.pdf"
   weight: 1
+- title: Food
+  url: "/menus/north-quarter-food.pdf"
+  weight: 2
+locations:
 - title: North Quarter
   url: "/locations/north-quarter"
-  weight: 2
+  weight: 1
 story:
 - title: Our Story
   url: "/story"
@@ -13,22 +17,16 @@ story:
 - title: Our Coffee
   url: "/coffee"
   weight: 2
-- title: Podcast
-  url: "/podcast"
-  weight: 3
 shop:
 - title: Coffee
   url: "https://shop.downtowncredo.com/"
   weight: 1
-- title: Merch
-  url: "https://stores.inksoft.com/credo/shop/home"
-  weight: 2
 - title: Catering
   url: "/catering"
-  weight: 3
+  weight: 2
 - title: Wholesale
   url: "/wholesale"
-  weight: 4
+  weight: 3
 friends:
 - title: Conduit
   url: "http://credoconduit.com"
@@ -36,25 +34,25 @@ friends:
 - title: Rally
   url: "http://rallysea.com"
   weight: 2
-- title: Orlando Together
-  url: "http://orlandotogether.org"
-  weight: 3
 navigation:
+- title: Menus
+  identifier: menus
+  weight: 1
 - title: Locations
   identifier: locations
-  weight: 1
+  weight: 2
 - title: Story
   identifier: story
-  weight: 2
+  weight: 3
 - title: Shop
   identifier: shop
-  weight: 3
+  weight: 4
 - title: Friends
   identifier: friends
-  weight: 4
+  weight: 5
 - title: Contact
   url: "/contact"
-  weight: 5
+  weight: 6
 social:
 - title: Facebook
   url: "https://www.facebook.com/downtowncredo"

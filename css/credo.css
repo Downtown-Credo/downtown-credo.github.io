@@ -179,3 +179,9 @@ a.plyr__controls__item.plyr__control:hover,
     width: 100%;
   }
 }
+
+.hero-content {
+  background-position: 0 0,50% 50%;
+  background-size: auto,cover;
+  justify-content: center;
+}
