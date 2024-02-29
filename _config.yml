@@ -11,6 +11,7 @@ cloudinary: "https://res.cloudinary.com/downtown-credo/image/upload"
 markdown: kramdown
 plugins:
   - jekyll-menus
+  - jekyll-redirect-from
 
 collections:
   locations:
