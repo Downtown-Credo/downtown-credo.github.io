@@ -1,5 +1,6 @@
 ---
 title: Store
+redirect_to: "https://shop.downtowncredo.com/"
 ---
 
 <section>
