@@ -1,11 +1,8 @@
 ---
 menus:
-- title: Coffee
-  url: "/menus/north-quarter.pdf"
+- title: Coffee & Food
+  url: "/menus/menu-spring-24.pdf"
   weight: 1
-- title: Food
-  url: "/menus/north-quarter-food.pdf"
-  weight: 2
 locations:
 - title: North Quarter
   url: "/locations/north-quarter"

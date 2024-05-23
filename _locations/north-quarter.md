@@ -30,6 +30,6 @@ phone: "(407) 519-0643"
 year_opened: 2016
 banner: "/img/location/north-quarter/location-north-quarter-banner.webp"
 image: "/img/location/north-quarter/north-quarter.webp"
-menu: "/menus/north-quarter.pdf"
+menu: "/menus/menu-spring-24.pdf"
 rentable: true
 ---
