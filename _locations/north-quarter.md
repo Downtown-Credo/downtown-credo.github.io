@@ -23,7 +23,7 @@ open:
 - days: Sunday – Saturday
   hours: 7:30am-3:30pm
 - days: "Kitchen: Sunday – Saturday"
-  hours: 8am-3:30pm
+  hours: 7:30am-3:30pm
 phone: "(407) 519-0643"
 year_opened: 2016
 banner: "/img/location/north-quarter/location-north-quarter-banner.webp"
