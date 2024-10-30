@@ -3,10 +3,6 @@ menus:
 - title: Coffee & Food
   url: "/menus/menu-spring-24.pdf"
   weight: 1
-locations:
-- title: North Quarter
-  url: "/locations/north-quarter"
-  weight: 1
 story:
 - title: Our Story
   url: "/story"
@@ -35,9 +31,6 @@ navigation:
 - title: Menus
   identifier: menus
   weight: 1
-- title: Locations
-  identifier: locations
-  weight: 2
 - title: Story
   identifier: story
   weight: 3

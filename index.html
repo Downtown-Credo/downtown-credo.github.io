@@ -114,49 +114,6 @@ learn_more:
     <div class="quote">{{ page.quote }}</div>
   </div>
 </section>
-<section class="section">
-  <div class="container w-container">
-    <p class="quote">Downtown Credo now has the ability to order online via Dripos. Click below to order!</p>
-    <div class="w-row">
-      <div class="w-col center">
-        <a href="https://order.dripos.com/Downtown-CREDO" class="button w-button">North Quarter</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="learn-more" class="section greybg">
-  <h1 class="center">Our Location</h1>
-  <div class="_3col-equal">
-    {% for location in site.locations %}
-    <div class="one-third">
-      <div class="home--division--wrap w-clearfix">
-        <img src="{{ location.image }}" alt="{{ location.title }}" class="image-full-width" />
-        <h2 class="home--division--title">{{ location.title }}</h2>
-      </div>
-      <div class="container">
-        <div>{{ location.details }}</div>
-        {%- if location.rentable -%}<a href="#" target="_blank" class="text-link popup" data-form="rent-form">Rent this space ⟶</a>{%- endif -%}
-        <h4>Address:</h4>
-        <div>{{ location.map.address }}</div>
-        <h4>Hours of operations</h4>
-        <div>
-          {% for entry in location.open %}
-          <strong>{{ entry.days }}:</strong> {{ entry.hours }}<br />
-          {% endfor %}
-        </div>
-        {%- if location.menu -%}
-        <h4>Menu</h4>
-        <a href="{{ location.menu }}" target="_blank" class="text-link">{{ location.title }} Menu ⟶</a>
-        {%- endif -%}
-        {%- if location.phone -%}
-        <h4>Contact</h4>
-        <div>{{ location.phone }}</div>
-        {%- endif -%}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</section>
 <section id="learn-more" class="section">
   <div class="_3col-equal">
     {% for more in page.learn_more %}
